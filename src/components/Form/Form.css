@@ -1,0 +1,23 @@
+.gicon {
+    margin-right: 5px;
+}
+
+.googleButton {
+    border-width: 5px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerButton {
+    background-color: black;
+    width: 130px;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin: 15px;
+}

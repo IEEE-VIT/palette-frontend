@@ -1,0 +1,37 @@
+.container {
+    max-width: 80%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.section {
+    height: 90vh;
+}
+
+.paletteTitle {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.downArrow {
+    justify-content: flex-end;
+}
+
+.solveProblemImage {
+    margin: 20px;
+}
+
+.regText {
+    margin: 30px;
+}
+
+.endSection {
+    padding-top: 60px;
+    background-color: black;
+    color: white;
+}
