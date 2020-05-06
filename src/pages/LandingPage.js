@@ -69,10 +69,8 @@ const LandingPage = () => {
             </div>
 
             <div className="endSection">
-                <div className="container">
                     <Title title={'Hit us up, we’ll get back shortly'} />
                     <Contact />
-                </div>
             </div>
         </div>
     )
