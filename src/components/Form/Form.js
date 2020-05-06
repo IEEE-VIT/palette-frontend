@@ -19,49 +19,59 @@ import './Form.css';
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
-      flexWrap: 'wrap',
+	  flexWrap: 'wrap',
+	  borderColor: 'black !important'
     },
     margin: {
-      margin: theme.spacing(1),
+	  margin: theme.spacing(1),
+	  borderWidth:3,
+	  borderColor: "black"
     },
     withoutLabel: {
       marginTop: theme.spacing(3),
     },
     textField: {
-      width: '25ch',
+	  width: '25ch',
+	  borderWidth:3,
+	  borderColor: "black"
     },
   }));
 
 const Form = () => {
     const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
+		setValues({ ...values, [prop]: event.target.value });
       };
     
       const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
+		setValues({ ...values, showPassword: !values.showPassword });
       };
     
       const handleMouseDownPassword = (event) => {
         event.preventDefault();
-      };
+	  };
+	  
+	  const onButtonClick = () => {
+		console.log(values);
+	  }
+
       const classes = useStyles();
       const [values, setValues] = React.useState({
-        amount: '',
+		firstName: '',
+		lastName: '',
         password: '',
-        weight: '',
-        weightRange: '',
+        email: '',
         showPassword: false,
       });
     return(
         <div className='form'>  
-            <Button variant="outlined" className="googleButton">
+            <Button variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
                 <img src={googleIcon} alt="gicon" className="gicon" height="24" width="24"/>
                 Continue with Google
             </Button> 
             <p>or</p>
-                <TextField className={clsx(classes.margin, classes.textField)} id="outlined-basic" label="First name" variant="outlined" color="black" />
-                <TextField className={clsx(classes.margin, classes.textField)} id="outlined-basic" label="Last name" variant="outlined" color="black" />
-                <TextField className={clsx(classes.margin, classes.textField)} id="outlined-basic" label="Email address" variant="outlined" color="black" />
+                <TextField className={clsx(classes.margin, classes.textField)} onChange={handleChange('firstName')} id="outlined-basic" label="First name" variant="outlined" color="primary" />
+                <TextField className={clsx(classes.margin, classes.textField)} onChange={handleChange('lastName')} id="outlined-basic" label="Last name" variant="outlined" color="primary" />
+                <TextField className={clsx(classes.margin, classes.textField)} onChange={handleChange('email')} id="outlined-basic" label="Email address" variant="outlined" color="primary" />
                 <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
@@ -84,7 +94,8 @@ const Form = () => {
                     labelWidth={70}
                 />
                 </FormControl>
-                <button className="registerButton">Register</button>
+				<button className="registerButton" onClick={onButtonClick()}>Register</button>
+
         </div>
     )
 }

@@ -12,14 +12,16 @@ import './Contact.css';
 const Contact = () => {
     return(
         <div className="contact">
-            <p><img src={phone} alt='phone' className="contact-icon" /> +91 9960331376 </p>
-            <p><img src={mail} alt='mail' className="contact-icon" /> ziyankarmali@gmail.com </p>
+            <div className="contact-info">
+                <p><img src={phone} alt='phone' className="contact-icon" /> +91 9960331376 </p>
+                <p><img src={mail} alt='mail' className="contact-icon" /> ziyankarmali@gmail.com </p>
+            </div>
             <div className="icon-links">
-                <GitHubIcon style={{ fontSize: 40 }} />
+                <a href="https://www.facebook.com/IEEEVIT/" style={{color:"white"}}><FacebookIcon style={{ fontSize: 40 }} /></a>
                 <p className="space"></p>
-                <FacebookIcon style={{ fontSize: 40 }} />
+                <a href="https://github.com/IEEE-VIT" style={{color:"white"}}><GitHubIcon style={{ fontSize: 40 }} /></a>
                 <p className="space"></p>
-                <LinkedInIcon style={{ fontSize: 40 }} />
+                <a href="https://www.linkedin.com/company/ieee-vit-vellore/?originalSubdomain=in" style={{color:"white"}}><LinkedInIcon style={{ fontSize: 40 }} /></a>
             </div>
             <p> Follow us for more updates </p>
             <img src={IEEElogo} alt='IEEElogo' className="ieee-logo" />
