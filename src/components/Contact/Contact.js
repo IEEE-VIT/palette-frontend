@@ -13,8 +13,8 @@ const Contact = () => {
     return(
         <div className="contact">
             <div className="contact-info">
-                <p><img src={phone} alt='phone' className="contact-icon" /> +91 9960331376 </p>
-                <p><img src={mail} alt='mail' className="contact-icon" /> ziyankarmali@gmail.com </p>
+                <p><img src={phone} alt='phone' className="contact-icon" /> +91 9560434342 </p>
+                <p><img src={mail} alt='mail' className="contact-icon" /> contact@ieeevit.org </p>
             </div>
             <div className="icon-links">
                 <a href="https://www.facebook.com/IEEEVIT/" style={{color:"white"}}><FacebookIcon style={{ fontSize: 40 }} /></a>

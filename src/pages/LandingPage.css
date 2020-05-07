@@ -2,6 +2,10 @@
     max-width: 80%;
 }
 
+.section {
+    margin-bottom: 7em;
+}
+
 img {
     max-width: 100%;
 }
@@ -31,6 +35,10 @@ img {
 
 .regText {
     margin: 30px;
+}
+
+.content-para {
+    font-size: 1.2em;
 }
 
 .endSection {
