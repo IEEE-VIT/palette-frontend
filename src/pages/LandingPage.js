@@ -10,12 +10,14 @@ import solveProblems from '../assets/images/solveProblems.svg';
 import './LandingPage.css';
 import ArtWorkCarousel from '../components/ArtWorkCarousel/ArtWorkCarousel';
 import Contact from '../components/Contact/Contact';
+import ArtWorkSlider from '../components/ArtWorkSlider/ArtWorkSlider';
+import RegistrationText from '../components/RegistrationText/RegistrationText';
 
 const LandingPage = () => {
     return(
         <div>
             {/* start */}
-            <div>
+            <div className="section">
                 <NavBarComponent />
                 <div className="paletteTitle">
                     <PaletteTitle />
@@ -28,7 +30,7 @@ const LandingPage = () => {
                 <div className="container">
                     <Title title={'Time to solve some real problems'} />
                     <img src={solveProblems} alt='solveProblems' className="solveProblemImage" />
-                    <p>
+                    <p className="content-para">
                         Palette ‘20 is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT.
                         While the last two editions witnessed amazing graphic designs and web designs, this year it is a 36 
                         hour long design hack based entirely on the concepts of UI & UX. We strongly believe in the saying 
@@ -45,7 +47,8 @@ const LandingPage = () => {
                 <div className="container">
                     <Title title={'Artworks from Palette ‘18 & ‘19'} />
                     <ArtWorkCarousel />
-                    <p>
+                    <ArtWorkSlider />
+                    <p className="content-para">
                         Palette ‘20 is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT.
                         While the last two editions witnessed amazing graphic designs and web designs, this year it is a 36 
                         hour long design hack based entirely on the concepts of UI & UX. We strongly believe in the saying 
@@ -60,9 +63,7 @@ const LandingPage = () => {
             <div className="section">
                 <div className="container">
                     <Title title={'Buckle up! Something big on your way!'} />
-                    <p className="regText">
-                        Registration closes in 10d 20h 8m 23s, which is 4 hours after inauguration of the event.
-                    </p>
+                    <RegistrationText />
                     <Form />
                     <p>Have an account? Log in </p>
                 </div>
