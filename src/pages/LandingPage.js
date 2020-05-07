@@ -10,6 +10,7 @@ import solveProblems from '../assets/images/solveProblems.svg';
 import './LandingPage.css';
 import ArtWorkCarousel from '../components/ArtWorkCarousel/ArtWorkCarousel';
 import Contact from '../components/Contact/Contact';
+import ArtWorkSlider from '../components/ArtWorkSlider/ArtWorkSlider';
 
 const LandingPage = () => {
     return(
@@ -45,6 +46,7 @@ const LandingPage = () => {
                 <div className="container">
                     <Title title={'Artworks from Palette ‘18 & ‘19'} />
                     <ArtWorkCarousel />
+                    <ArtWorkSlider />
                     <p>
                         Palette ‘20 is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT.
                         While the last two editions witnessed amazing graphic designs and web designs, this year it is a 36 

@@ -13,10 +13,16 @@ img {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url('../assets/images/Desktop-bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .downArrow {
     justify-content: flex-end;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 1em;
 }
 
 .solveProblemImage {
@@ -31,4 +37,10 @@ img {
     padding-top: 60px;
     background-color: black;
     color: white;
+}
+
+@media (max-width:575px) {
+    .paletteTitle {
+        background-image: url('../assets/images/Mobile-bg.svg');
+    }
 }
