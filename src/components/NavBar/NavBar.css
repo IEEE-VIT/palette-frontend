@@ -1,7 +1,6 @@
 .navbar {
     background-color: white;
     margin: auto;
-    opacity: 0.8;
 }
 
 .nav-button {
@@ -32,6 +31,7 @@
 @media (min-width:575px) {
     .navbar {
         margin: 0 30px;
+        opacity: 0.8;
     }
 
     .nav-button {

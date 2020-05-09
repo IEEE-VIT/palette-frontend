@@ -2,6 +2,11 @@
     max-width: 80%;
 }
 
+.container-2 {
+    max-width: 90%;
+    margin: auto;
+}
+
 .section {
     margin-top: 7em;
 }
@@ -13,6 +18,7 @@ img {
 
 .paletteTitle {
     height: 100vh;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +49,8 @@ img {
 }
 
 .endSection {
-    padding-top: 60px;
+    margin-top: 8em;
+    padding-top: 8em;
     background-color: black;
     color: white;
 }
