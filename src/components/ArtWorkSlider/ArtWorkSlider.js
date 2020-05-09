@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 
+import pic1 from '../../assets/images/pic1.svg';
 import pic2 from '../../assets/images/pic2.svg';
 import pic3 from '../../assets/images/pic3.svg';
 import pic4 from '../../assets/images/pic4.svg';
@@ -26,6 +27,9 @@ class ArtWorkSlider extends React.Component {
         return(
             <div className="artworkslider">
                 <Slider {...settings}>
+                <div>
+                        <img src={pic1} alt='carousel-images'/>
+                    </div>
                     <div>
                         <img src={pic2} alt='carousel-images'/>
                     </div>

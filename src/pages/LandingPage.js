@@ -2,13 +2,11 @@ import React from 'react';
 import NavBarComponent from '../components/NavBar/NavBar';
 import PaletteTitle from '../components/PaletteTitle/PaletteTitle';
 import Title from '../components/Title/Title';
-import Form from '../components/Form/Form';
 
 import down from '../assets/images/down.svg';
 import solveProblems from '../assets/images/solveProblems.svg';
 
 import './LandingPage.css';
-import ArtWorkCarousel from '../components/ArtWorkCarousel/ArtWorkCarousel';
 import Contact from '../components/Contact/Contact';
 import ArtWorkSlider from '../components/ArtWorkSlider/ArtWorkSlider';
 import RegistrationText from '../components/RegistrationText/RegistrationText';
@@ -72,7 +70,7 @@ const LandingPage = () => {
                     amazing workshop filled with exciting talks by Saptarshi Prakash who is a Product Design Manager 
                     at Swiggy and Rahul Chakraborty who was a Product Designer at Flipkart and currently a Senior 
                     Product Designer at Swiggy as well. Along with the talks, we had the 6-hour journey of students 
-                    competing to work on beautiful designs to win the prize. With our exceptional problem statements, 
+                    competing to work on compelling designs to win the prize. With our exceptional problem statements, 
                     the participants were in a high-pressure situation but with the guidance and mentorship from our
                      speakers as well as our experienced seniors, the outcome was incredible. 
                     </p>
