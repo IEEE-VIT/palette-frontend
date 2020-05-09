@@ -59,9 +59,10 @@ const LandingPage = () => {
                 <div className="container">
                     
                     {/* <ArtWorkCarousel /> */}
-                    <p className="content-para">
-                    <strong>Palette ‘19</strong>  was an amazing event filled with exciting talks by <strong>Saptarshi Prakash</strong> and <strong>Rahul Chakraborty </strong>
-                    who are currently working at <strong>Swiggy</strong>. We had the 6-hour journey of students 
+                    <p className="content-para para-space">
+                    Palette ‘19 was an amazing event filled with exciting talks 
+                    by <a href="https://www.linkedin.com/in/saptarshipr/" className="linkedin-link"><strong>Saptarshi Prakash</strong></a> and <a href="https://www.linkedin.com/in/hckmstrrahul/" className="linkedin-link"><strong>Rahul Chakraborty</strong></a> who 
+                    are currently working at <strong>Swiggy</strong>. We had the 6-hour journey of students 
                     competing to work on compelling designs to win the prize. With our exceptional problem statements, 
                     the participants were in a high-pressure situation but with the guidance and mentorship from our
                      speakers as well as our experienced seniors, the outcome was <strong>incredible.</strong> 
