@@ -23,3 +23,12 @@
 .space {
     margin: 10px;
 }
+
+.link-website {
+    color: white;
+}
+
+.link-website:hover {
+    color: white;
+    font-weight: 600;
+}

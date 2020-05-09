@@ -42,10 +42,16 @@ const LandingPage = () => {
                 </div>
             </div>
 
+            <div className="section" id="register">
+                <div className="container">
+                    <RegistrationText />
+                </div>
+            </div>
+
             {/* artworks from previous */}
             <div className="section" id="history">
                 <div className="container">
-                    <Title title={'Artworks from Palette ‘18 & ‘19'} />
+                    <Title title={'Highlights from Palette ‘19'} />
                     {/* <ArtWorkCarousel /> */}
                     <ArtWorkSlider />
                     <p className="content-para">
@@ -57,15 +63,6 @@ const LandingPage = () => {
                         system, wireframing, branding and prototypying. Once the event goes live, the participants will be given 
                         a set of randomly generated UX problems and they will be continuing with one of their choice.
                     </p>
-                </div>
-            </div>
-
-            <div className="section" id="register">
-                <div className="container">
-                    <Title title={'Buckle up! Something big on your way!'} />
-                    <RegistrationText />
-                    <Form />
-                    <p>Have an account? Log in </p>
                 </div>
             </div>
 
