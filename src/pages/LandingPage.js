@@ -61,15 +61,16 @@ const LandingPage = () => {
 
             {/* artworks from previous */}
             <div className="section" id="history">
-                <div className="container">
+                <div className="container-2">
                     <Title title={'Highlights from Palette ‘19'} />
-                    {/* <ArtWorkCarousel /> */}
                     <ArtWorkSlider />
+                </div>
+                <div className="container">
+                    
+                    {/* <ArtWorkCarousel /> */}
                     <p className="content-para">
-                    Palette ‘19 was the 2nd edition of the design-a-thon conducted yearly by IEEE VIT. It was an 
-                    amazing workshop filled with exciting talks by Saptarshi Prakash who is a Product Design Manager 
-                    at Swiggy and Rahul Chakraborty who was a Product Designer at Flipkart and currently a Senior 
-                    Product Designer at Swiggy as well. Along with the talks, we had the 6-hour journey of students 
+                    Palette ‘19  was an amazing event filled with exciting talks by Saptarshi Prakash and Rahul Chakraborty 
+                    who are currently working at Swiggy. We had the 6-hour journey of students 
                     competing to work on compelling designs to win the prize. With our exceptional problem statements, 
                     the participants were in a high-pressure situation but with the guidance and mentorship from our
                      speakers as well as our experienced seniors, the outcome was incredible. 

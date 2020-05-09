@@ -2,6 +2,11 @@
     max-width: 80%;
 }
 
+.container-2 {
+    max-width: 90%;
+    margin: auto;
+}
+
 .section {
     margin-top: 7em;
 }
