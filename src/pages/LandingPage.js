@@ -17,7 +17,7 @@ const LandingPage = () => {
     return(
         <div>
             {/* start */}
-            <div className="section">
+            <div id="start">
                 <NavBarComponent />
                 <div className="paletteTitle">
                     <PaletteTitle />
@@ -26,7 +26,7 @@ const LandingPage = () => {
             </div>
             
             {/* solve real problems */}
-            <div className="section">
+            <div className="section" id="info">
                 <div className="container">
                     <Title title={'Time to solve some real problems'} />
                     <img src={solveProblems} alt='solveProblems' className="solveProblemImage" />
@@ -43,10 +43,10 @@ const LandingPage = () => {
             </div>
 
             {/* artworks from previous */}
-            <div className="section">
+            <div className="section" id="history">
                 <div className="container">
                     <Title title={'Artworks from Palette ‘18 & ‘19'} />
-                    <ArtWorkCarousel />
+                    {/* <ArtWorkCarousel /> */}
                     <ArtWorkSlider />
                     <p className="content-para">
                         Palette ‘20 is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT.
@@ -60,7 +60,7 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            <div className="section">
+            <div className="section" id="register">
                 <div className="container">
                     <Title title={'Buckle up! Something big on your way!'} />
                     <RegistrationText />
@@ -69,10 +69,10 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            <div className="endSection">
+            <footer className="endSection" id="contact">
                     <Title title={'Hit us up, we’ll get back shortly'} />
                     <Contact />
-            </div>
+            </footer>
         </div>
     )
 }

@@ -1,25 +1,18 @@
 import React from 'react';
-import Countdown, { formatTimeDelta } from 'react-countdown';
-
-const Completionist = () => <span>Begun!</span>
-
-const renderer = ({days, hours, minutes, seconds, completed }) => {
-    const daysss = "d";
-    if (completed) {
-      return <Completionist />
-    } else {
-      return <span> {days} {daysss} {formatTimeDelta(hours)}:{formatTimeDelta(minutes)}:{formatTimeDelta(seconds)} </span>
-    }
-};
+import Countdown from 'on-react-countdown';
 
 const PaletteTitle = () => {
+  const text = {
+    days: 'd',
+    hours: 'h',
+    minutes: 'm',
+    seconds: 's',
+  }
     return(
         <div>
             <h1><strong> Palette '20 </strong></h1>
-            <h4>begins in  <Countdown
-                  date={'2020-05-22T10:00:00'}
-                  formatTimeDelta={renderer}
-              />
+            <h4>
+              begins in <Countdown end={1589221800} wordsEndingOff={true} text={text} />
             </h4>
         </div>
     )

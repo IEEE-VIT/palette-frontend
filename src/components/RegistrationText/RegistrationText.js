@@ -1,25 +1,18 @@
 import React from 'react';
-import Countdown, { formatTimeDelta } from 'react-countdown';
+import Countdown from 'on-react-countdown';
 
 import './RegistrationText.css';
 
-const Completionist = () => <span>Begun!</span>
-
-const renderer = ({days, hours, minutes, seconds, completed }) => {
-    if (completed) {
-      return <Completionist />
-    } else {
-      return <span> {days} {hours} {minutes} {seconds} </span>
-    }
-};
-
 const RegistrationText = () => {
+  const text = {
+    days: 'd',
+    hours: 'h',
+    minutes: 'm',
+    seconds: 's',
+  }
     return(
         <p className="regText">
-            Registration starts in <Countdown
-                  date={'2020-05-12T00:00:00'}
-                  formatTimeDelta={renderer}
-              />  which is just a few days away!
+            Registration starts in <strong><Countdown end={1589221800} wordsEndingOff={true} text={text} /></strong> which is just a few days away!
         </p>
     )
 }

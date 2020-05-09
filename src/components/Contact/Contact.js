@@ -2,6 +2,7 @@ import React from 'react';
 
 import phone from '../../assets/images/phone.svg';
 import mail from '../../assets/images/mail.svg';
+import globe from '../../assets/images/globe.svg';
 import IEEElogo from '../../assets/images/IEEE-VIT-logo.svg';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -14,6 +15,7 @@ const Contact = () => {
         <div className="contact">
             <div className="contact-info">
                 <p><img src={phone} alt='phone' className="contact-icon" /> +91 9560434342 </p>
+                <p><img src={globe} alt='globe' className="contact-icon" /> www.ieeevit.org </p>
                 <p><img src={mail} alt='mail' className="contact-icon" /> contact@ieeevit.org </p>
             </div>
             <div className="icon-links">

@@ -3,7 +3,7 @@
 }
 
 .section {
-    margin-bottom: 7em;
+    margin-top: 7em;
 }
 
 img {
@@ -39,6 +39,7 @@ img {
 
 .content-para {
     font-size: 1.2em;
+    margin-top: 2em;
 }
 
 .endSection {

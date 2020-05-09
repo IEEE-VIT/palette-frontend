@@ -1,6 +1,7 @@
 .navbar {
     background-color: white;
     margin: auto;
+    opacity: 0.8;
 }
 
 .nav-button {
