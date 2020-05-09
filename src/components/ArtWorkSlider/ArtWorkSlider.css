@@ -1,9 +1,29 @@
 .slick-center img{
-    transform: scale(1.1);
-    height: 400px;
-    margin: auto;    
+    transform: scale(1.5);
+    margin: auto;
+    height: 150px;
 }
 
 .image-size {
     width: 400px;
+}
+
+.artworkslider {
+    margin-top: 5em;
+}
+
+@media (min-width:1000px) {
+    .slick-center img{
+        transform: scale(1.1);
+        height: 400px;
+        margin: auto;    
+    }
+}
+
+@media(min-width:575px) and (max-width:999px) {
+    .slick-center img{
+        transform: scale(1.1);
+        height: 250px;
+        margin: auto;    
+    }
 }

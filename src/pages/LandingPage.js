@@ -24,6 +24,11 @@ const LandingPage = () => {
                     <img src={down} alt="down" className="downArrow" />
                 </div>
             </div>
+
+            <div id="info">
+
+            </div>
+
             
             {/* solve real problems */}
             <div className="section" id="info">
@@ -42,10 +47,18 @@ const LandingPage = () => {
                 </div>
             </div>
 
+            <div id="register">
+
+            </div>
+
             <div className="section" id="register">
                 <div className="container">
                     <RegistrationText />
                 </div>
+            </div>
+            
+            <div id="history">
+
             </div>
 
             {/* artworks from previous */}
@@ -55,13 +68,13 @@ const LandingPage = () => {
                     {/* <ArtWorkCarousel /> */}
                     <ArtWorkSlider />
                     <p className="content-para">
-                        Palette ‘20 is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT.
-                        While the last two editions witnessed amazing graphic designs and web designs, this year it is a 36 
-                        hour long design hack based entirely on the concepts of UI & UX. We strongly believe in the saying 
-                        “Design is not how it looks, design is how it works”, we will be looking at not just the output or 
-                        presentation but the design process and steps involved like research, building user personas, a design 
-                        system, wireframing, branding and prototypying. Once the event goes live, the participants will be given 
-                        a set of randomly generated UX problems and they will be continuing with one of their choice.
+                    Palette ‘19 was the 2nd edition of the design-a-thon conducted yearly by IEEE VIT. It was an 
+                    amazing workshop filled with exciting talks by Saptarshi Prakash who is a Product Design Manager 
+                    at Swiggy and Rahul Chakraborty who was a Product Designer at Flipkart and currently a Senior 
+                    Product Designer at Swiggy as well. Along with the talks, we had the 6-hour journey of students 
+                    competing to work on beautiful designs to win the prize. With our exceptional problem statements, 
+                    the participants were in a high-pressure situation but with the guidance and mentorship from our
+                     speakers as well as our experienced seniors, the outcome was incredible. 
                     </p>
                 </div>
             </div>

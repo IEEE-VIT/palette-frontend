@@ -1,42 +1,42 @@
 import React from 'react';
 import Slider from "react-slick";
 
-import carouselImage from '../../assets/images/solveProblems.svg';
+import pic2 from '../../assets/images/pic2.svg';
+import pic3 from '../../assets/images/pic3.svg';
+import pic4 from '../../assets/images/pic4.svg';
+import pic5 from '../../assets/images/pic5.svg';
+
 
 import './ArtWorkSlider.css';
 
-var settings = {
+  var settings = {
+    autoplay: true,
+    autoplaySpeed: 3000,
     dots: true,
-    className: "center slick-center",
-    centerMode: true,
     infinite: true,
-    centerPadding: "60px",
+    speed: 800,
     slidesToShow: 3,
-    speed: 1
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: 0
   };
 
 class ArtWorkSlider extends React.Component {
     render() {
         return(
-            <div>
+            <div className="artworkslider">
                 <Slider {...settings}>
                     <div>
-                        <img src={carouselImage} alt='carousel-images' className="image-size"/>
+                        <img src={pic2} alt='carousel-images'/>
                     </div>
                     <div>
-                        <img src={carouselImage} alt='carousel-images' />
+                        <img src={pic3} alt='carousel-images' />
                     </div>
                     <div>
-                        <img src={carouselImage} alt='carousel-images' />
+                        <img src={pic4} alt='carousel-images' />
                     </div>
                     <div>
-                    <img src={carouselImage} alt='carousel-images' />
-                    </div>
-                    <div>
-                    <img src={carouselImage} alt='carousel-images' />
-                    </div>
-                    <div>
-                    <img src={carouselImage} alt='carousel-images' />
+                        <img src={pic5} alt='carousel-images' />
                     </div>
                 </Slider>
             </div>
