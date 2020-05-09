@@ -10,6 +10,7 @@ import './LandingPage.css';
 import Contact from '../components/Contact/Contact';
 import ArtWorkSlider from '../components/ArtWorkSlider/ArtWorkSlider';
 import RegistrationText from '../components/RegistrationText/RegistrationText';
+import Collaborators from '../components/Collaborators/Collaborators';
 
 const LandingPage = () => {
     return(
@@ -19,7 +20,7 @@ const LandingPage = () => {
                 <NavBarComponent />
                 <div className="paletteTitle">
                     <PaletteTitle />
-                    <img src={down} alt="down" className="downArrow" />
+                    <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
                 </div>
             </div>
 
@@ -43,15 +44,7 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            <div id="register">
-
-            </div>
-
-            <div className="section" id="register">
-                <div className="container">
-                    <RegistrationText />
-                </div>
-            </div>
+            
             
             <div id="history">
 
@@ -73,6 +66,22 @@ const LandingPage = () => {
                     the participants were in a high-pressure situation but with the guidance and mentorship from our
                      speakers as well as our experienced seniors, the outcome was <strong>incredible.</strong> 
                     </p>
+                </div>
+            </div>
+
+            <div className="">
+                <div className="container">
+                    <p className="content-para">
+                        <strong>Past collaborators</strong>
+                    </p>
+                    <Collaborators />
+                </div>
+            </div>
+
+            <div className="section" id="register">
+                <div className="container">
+                    <Title title={'Buckle up! Something big on your way!'} />
+                    <RegistrationText />
                 </div>
             </div>
 
