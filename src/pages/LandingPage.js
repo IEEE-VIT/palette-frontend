@@ -34,13 +34,11 @@ const LandingPage = () => {
                     <Title title={'Time to solve some real problems'} />
                     <img src={solveProblems} alt='solveProblems' className="solveProblemImage" />
                     <p className="content-para">
-                        Palette ‘20 is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT.
-                        While the last two editions witnessed amazing graphic designs and web designs, this year it is a 36 
-                        hour long design hack based entirely on the concepts of UI & UX. We strongly believe in the saying 
-                        “Design is not how it looks, design is how it works”, we will be looking at not just the output or 
+                        <strong>Palette ‘20</strong> is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT. While the last two editions witnessed amazing graphic designs and web designs, this year it is a <strong>36 hour long design hack</strong> based entirely on the concepts of UI & UX. We strongly believe in the saying 
+                        <strong> “Design is not how it looks, design is how it works”</strong>, we will be looking at not just the output or 
                         presentation but the design process and steps involved like research, building user personas, a design 
                         system, wireframing, branding and prototypying. Once the event goes live, the participants will be given 
-                        a set of randomly generated UX problems and they will be continuing with one of their choice.
+                        a set of <strong> randomly generated UX problems </strong> and they will be continuing with one of their choice.
                     </p>
                 </div>
             </div>
@@ -69,11 +67,11 @@ const LandingPage = () => {
                     
                     {/* <ArtWorkCarousel /> */}
                     <p className="content-para">
-                    Palette ‘19  was an amazing event filled with exciting talks by Saptarshi Prakash and Rahul Chakraborty 
-                    who are currently working at Swiggy. We had the 6-hour journey of students 
+                    <strong>Palette ‘19</strong>  was an amazing event filled with exciting talks by <strong>Saptarshi Prakash</strong> and <strong>Rahul Chakraborty </strong>
+                    who are currently working at <strong>Swiggy</strong>. We had the 6-hour journey of students 
                     competing to work on compelling designs to win the prize. With our exceptional problem statements, 
                     the participants were in a high-pressure situation but with the guidance and mentorship from our
-                     speakers as well as our experienced seniors, the outcome was incredible. 
+                     speakers as well as our experienced seniors, the outcome was <strong>incredible.</strong> 
                     </p>
                 </div>
             </div>
