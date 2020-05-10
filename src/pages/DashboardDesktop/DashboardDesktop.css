@@ -1,0 +1,13 @@
+.dash-menu {
+    margin-top: 6em;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.column {
+    /* border: 1px solid red; */
+    width: 45%;
+}

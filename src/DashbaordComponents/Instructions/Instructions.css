@@ -1,0 +1,25 @@
+.instructions {
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.instructions-title {
+    border-bottom: 2px solid black;
+    padding: 1em;
+}
+
+.instructions-list {
+    padding: 1.5em 0.5em;
+    text-align: start;
+}
+
+.instructions-list li {
+    padding-left: 1em;
+    padding-bottom: 1em;
+    line-height: 160%;
+}
+
+.instructions-list a {
+    color: black;
+}
