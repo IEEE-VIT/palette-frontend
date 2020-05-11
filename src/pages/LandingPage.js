@@ -11,6 +11,7 @@ import Contact from '../components/Contact/Contact';
 import ArtWorkSlider from '../components/ArtWorkSlider/ArtWorkSlider';
 import RegistrationText from '../components/RegistrationText/RegistrationText';
 import Collaborators from '../components/Collaborators/Collaborators';
+import Form from '../components/Form/Form';
 
 const LandingPage = () => {
     return(
@@ -83,6 +84,7 @@ const LandingPage = () => {
                 <div className="container">
                     <Title title={'Buckle up! Something big on your way!'} />
                     <RegistrationText />
+                    <Form />
                 </div>
             </div>
 
