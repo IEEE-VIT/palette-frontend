@@ -3,11 +3,7 @@ import { TextField, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import googleIcon from '../../assets/images/icons8-google.svg';
 
-import admin from '../../config/firebase';
-import { googleOAuth, createUser } from '../../utils/firebaseHelperFuncs';
-
 import './Form.css';
-
 
 class Form extends Component {
 	constructor(props) {
@@ -38,31 +34,12 @@ class Form extends Component {
         })
 	}
 
-	onGoogleAuth = () => {
-		console.log("Clicked google auth")
-		googleOAuth()
-			.then(async (user) => {
-				const {isRegSuccess, wasUserRegistered} = await createUser(user.email, user.displayName, user.uid);
-                if (isRegSuccess) {
-                    window.location.href="/dashboard"
-                } else {
-                    if (wasUserRegistered) {
-                        window.location.href="/dashboard"
-                    }
-                     alert("Looks like something went Wrong, Please reach out to us!")
-                }
-                return;
-			})
-			.catch((err) => {
-                console.log(err);
-            })
-	}
 	
 	render() {
 		const {name, email, password} = this.state;
 		return(
 			<div className="form">
-				<Button variant="outlined" onClick={()=> this.onGoogleAuth()} className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
+				<Button variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
 					<img src={googleIcon} alt="gicon" className="gicon" height="24" width="24"/>
 					Continue with Google
 				</Button> 

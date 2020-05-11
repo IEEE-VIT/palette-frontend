@@ -1,7 +1,7 @@
 import {db, admin} from '../config/firebase';
 import chalk from 'chalk';
 
-export const googleOAuth = () => {
+const googleOAuth = () => {
     return new Promise((resolve, reject) => {
         var provider = new admin.auth.GoogleAuthProvider();
         admin.auth().signInWithPopup(provider)
@@ -16,3 +16,5 @@ export const googleOAuth = () => {
           
     })
 } 
+
+export default googleOAuth;
