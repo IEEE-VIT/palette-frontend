@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import googleIcon from '../../assets/images/icons8-google.svg';
+import firebase from '../../utils/firebase';
+import cookie from 'react-cookies';
+
 
 import './Form.css';
 
@@ -11,7 +14,10 @@ class Form extends Component {
 		this.state = {
 			name:'',
 			email:'',
-			password:''
+			password:'',
+			loaded: '',
+			loading: '',
+			error: ''
 		}
 	}
 
@@ -34,12 +40,95 @@ class Form extends Component {
         })
 	}
 
+	//Google signup
+    signIn = async () => {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().languageCode = 'en';
+        var that = this;
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            that.setState({loaded:false})
+            if (result.credential) {
+            
+            }
+            // The signed-in user info.
+            var user = result.user;
+            console.log(result)
+            fetch(`https://8c96ab4c.ngrok.io/user/create`,{
+                method: "post",
+                headers: {
+                    'Content-type':'application/json',
+                    'Authorization': "Bearer "+user.uid
+                },
+                body: JSON.stringify({
+                    name: user.displayName,
+                    email: user.email,
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                //console.log(data)
+                //console.log('Saving Cookie...')
+                const expires = new Date()
+                expires.setDate(Date.now() + 1000 * 60 * 60 * 1)
+                cookie.save('PALETTE',{uid: user.uid, email: user.email},{path:'/'});
+            })
+            .then(() => {
+                window.location.href = "/dashboard";
+                that.setState({loaded:true})
+            })
+            .catch(e => {
+                that.setState({loaded:true})
+            });
+          }).catch(function(error) {
+              console.log(error)
+            that.setState({loaded:true})
+          }.bind(this));
+    }
 	
+	//Sign-up
+     newRegistration=()=>{
+
+		//Firebase auth
+        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then((data)=>{
+    
+            //Call Rest API
+            fetch(`https://8c96ab4c.ngrok.io/user/create`,{
+                method: "post",
+                headers: {
+                    'Content-type':'application/json',
+                    'Authorization': "Bearer "+data.user.uid
+                },
+                body: JSON.stringify({
+                    name: this.state.name,
+                    email: this.state.email,
+                })
+            }).then((data1)=>{
+                console.log("API Response: " + data1)
+                return data1.json();
+            }).then((data1)=>{
+                if (data1.statusCode !== 200) {
+                    this.setState({loading:false})
+                    alert(data1.payload.msg)
+                } else {
+                    window.alert("Account created!")
+                    window.location.href="/dashboard"
+                    cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
+                }
+            })
+        })
+        .catch(function(error) {
+            console.log(this.state.error)
+            this.setState({TeacherError: "User already exists!"})
+        }.bind(this));
+    }
+
+
 	render() {
 		const {name, email, password} = this.state;
 		return(
 			<div className="form">
-				<Button variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
+				<Button onClick={this.signIn} variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
 					<img src={googleIcon} alt="gicon" className="gicon" height="24" width="24"/>
 					Continue with Google
 				</Button> 
@@ -84,7 +173,7 @@ class Form extends Component {
 						helperText=""
 					/>
 				</div>
-				<button className="registerButton">Register</button>
+				<button  onClick={this.newRegistration} className="registerButton">Register</button>
 				<p>Have an account? <button className="log-in-button">Log in</button></p>
 			</div>
 		)
