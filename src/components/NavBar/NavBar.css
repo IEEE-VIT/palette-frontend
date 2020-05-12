@@ -29,11 +29,14 @@
 }
 
 @media (min-width:575px) {
-    .navbar {
-        margin: 0 30px;
-        opacity: 0.8;
+    .navbar-buttons {
+        margin-right: 30px;
     }
 
+    .palette-logo-navbar {
+        margin-left: 30px;
+    }
+    
     .nav-button {
         margin-right: 10px;
     }
