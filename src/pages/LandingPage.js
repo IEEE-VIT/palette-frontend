@@ -84,7 +84,7 @@ const LandingPage = () => {
                 <div className="container">
                     <Title title={'Buckle up! Something big on your way!'} />
                     <RegistrationText />
-                    <Form />
+                    {/* <Form /> */}
                 </div>
             </div>
 

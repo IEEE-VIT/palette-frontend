@@ -12,7 +12,7 @@ const RegistrationText = () => {
   }
     return(
         <p className="regText">
-            Registrations close in <strong><Countdown end={1590100200} wordsEndingOff={true} text={text} /></strong>
+            Registrations open in <strong><Countdown end={1589297400} wordsEndingOff={true} text={text} /></strong>
         </p>
     )
 }
