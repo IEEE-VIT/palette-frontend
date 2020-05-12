@@ -1,19 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
+import LoadingGif from '../../assets/gif/loading.gif'
 
 import './Loading.css';
 
-class Loading extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <div>
-
-            </div>
-        )
-    }
+const Loading = () => {
+    return(
+        <div className="loading-component">
+            <img src={LoadingGif} alt="loading..." />
+        </div>
+    )
 }
 
 export default Loading;

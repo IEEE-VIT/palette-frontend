@@ -34,6 +34,10 @@
     margin: 15px;
 }
 
+.registerButton:focus {
+    outline: none;
+}
+
 .log-in-button {
     background-color: white;
     outline: none;

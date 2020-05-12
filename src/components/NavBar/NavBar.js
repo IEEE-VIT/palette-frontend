@@ -7,7 +7,7 @@ const NavBarComponent = () => {
     return(
         <div>
             <Navbar expand="sm" fixed="top" className="navbar">
-                <a href="#start"><img src={Logo} alt="logo" /></a>
+                <a href="#start" className="palette-logo-navbar"><img src={Logo} alt="logo" /></a>
                 <Navbar.Toggle className="navbar-toggle" style={{border:"none"}} />
                 <Navbar.Collapse className="justify-content-end navbar-buttons">
                     <Nav.Link className="nav-button active" href="#info">Info</Nav.Link>

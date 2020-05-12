@@ -7,6 +7,7 @@ import firebase from '../utils/firebase';
 
 import './Dashboard.css';
 import Updates from '../components/Updates/Updates';
+import backgroundVideo from '../assets/gif/desktop-bg.mp4';
 
 class Dashboard extends Component {
     
@@ -14,12 +15,8 @@ class Dashboard extends Component {
         console.log('sign out clicked')
         firebase.auth().signOut().then(function() {
             console.log('inside signout auth')
-            var that = this;
             cookie.remove('PALETTE', { path: '/' })
-            // that.renderRedirect();
-            // that.handleClose();
             window.location.href = "/";
-            //console.log("Logged out")
           })
           .catch(function(error) {
               console.log(error);
@@ -36,16 +33,21 @@ class Dashboard extends Component {
         return(
             <div>
                 <div className="navbar">
-                    <img src={logo} alt='palette-logo' />
-                    <span className><strong>Palette ‘20</strong> </span>
+                    <img src={logo} alt='palette-logo' className="paletteLogoDashboard" />
+                    <span className="paletteTitleDashboard"><strong>Palette ‘20</strong> </span>
                     <button onClick={this.signOut} className="logout-button"><img src={logout} alt='logout' /></button>
                 </div>
 
                 <div className="center-text">
-                    <h2>Coming to your screen in <strong className="timer-together"><Countdown end={1590100200} wordsEndingOff={true} text={text} /></strong></h2>
-                    {/* <div className="end-updates">
+                    <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
+                        <source src={backgroundVideo} type="video/mp4" />
+                    </video>
+                    <div className="dashboard-content">
+                        <p className="comingTitleDashboard">Coming to your screen in <strong className="timer-together"><Countdown end={1590100200} wordsEndingOff={true} text={text} /></strong></p>
+                    </div>
+                    <div className="end-updates">
                         <Updates />
-                    </div> */}
+                    </div>
                 </div>
             </div>
         )
