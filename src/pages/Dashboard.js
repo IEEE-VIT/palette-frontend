@@ -16,15 +16,13 @@ class Dashboard extends Component {
             console.log('inside signout auth')
             var that = this;
             cookie.remove('PALETTE', { path: '/' })
-            that.renderRedirect();
-            that.handleClose();
+            // that.renderRedirect();
+            // that.handleClose();
+            window.location.href = "/";
             //console.log("Logged out")
           })
-          .then(() => {
-                console.log("in .then")
-                window.location.href = "/";
-          })
           .catch(function(error) {
+              console.log(error);
           });
     }
 

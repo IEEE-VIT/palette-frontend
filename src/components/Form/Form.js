@@ -52,7 +52,7 @@ class Form extends Component {
             // The signed-in user info.
             var user = result.user;
             console.log(result)
-            fetch(`https://b9051962.ngrok.io/user/create`,{
+            fetch(`http://localhost:8000/user/create`,{
                 method: "post",
                 headers: {
                     'Content-type':'application/json',
@@ -92,7 +92,7 @@ class Form extends Component {
         .then((data)=>{
     
             //Call Rest API
-            fetch(`https://b9051962.ngrok.io/user/create`,{
+            fetch(`https://git.heroku.com/salty-retreat-16868/user/create`,{
                 method: "post",
                 headers: {
                     'Content-type':'application/json',
@@ -110,7 +110,6 @@ class Form extends Component {
                     this.setState({loading:false})
                     alert(data1.payload.msg)
                 } else {
-                    window.alert("Account created!")
                     window.location.href="/dashboard"
                     cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
                 }

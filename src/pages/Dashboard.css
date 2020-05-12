@@ -5,7 +5,6 @@
 }
 
 .center-text {
-    border: 1px solid red;
     height: 90vh;
     display: flex;
     flex-direction: column;
