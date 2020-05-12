@@ -52,7 +52,7 @@ class Form extends Component {
             // The signed-in user info.
             var user = result.user;
             console.log(result)
-            fetch(`http://localhost:8000/user/create`,{
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/user/create`,{
                 method: "post",
                 headers: {
                     'Content-type':'application/json',
@@ -86,13 +86,13 @@ class Form extends Component {
 	
 	//Sign-up
      newRegistration=()=>{
-
+		console.log("clicked")
 		//Firebase auth
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((data)=>{
-    
+			console.log("inside")
             //Call Rest API
-            fetch(`https://git.heroku.com/salty-retreat-16868/user/create`,{
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/user/create`,{
                 method: "post",
                 headers: {
                     'Content-type':'application/json',
