@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import googleIcon from '../../assets/images/icons8-google.svg';
 import firebase from '../../utils/firebase';
 import cookie from 'react-cookies';
@@ -53,7 +52,7 @@ class Form extends Component {
             // The signed-in user info.
             var user = result.user;
             console.log(result)
-            fetch(`https://8c96ab4c.ngrok.io/user/create`,{
+            fetch(`https://b9051962.ngrok.io/user/create`,{
                 method: "post",
                 headers: {
                     'Content-type':'application/json',
@@ -93,7 +92,7 @@ class Form extends Component {
         .then((data)=>{
     
             //Call Rest API
-            fetch(`https://8c96ab4c.ngrok.io/user/create`,{
+            fetch(`https://b9051962.ngrok.io/user/create`,{
                 method: "post",
                 headers: {
                     'Content-type':'application/json',
