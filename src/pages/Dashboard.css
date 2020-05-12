@@ -1,3 +1,28 @@
+.logout-button {
+    background-color: white;
+    border: none;
+    outline: none;
+}
+
 .center-text {
-    display: 
+    border: 1px solid red;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/gif/desktop-bg.mp4');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2em 2em;
+}
+
+.end-updates {
+    justify-self: flex-end;
+}
+
+@media (max-width:575px) {
+    .center-text {
+        background-image: url('../assets/images/Mobile-bg.svg');
+    }
 }

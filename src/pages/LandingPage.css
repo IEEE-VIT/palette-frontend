@@ -1,3 +1,21 @@
+.loading-screen {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoBG {
+    position:fixed;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+}
+
 .container {
     max-width: 80%;
 }
@@ -23,9 +41,6 @@ img {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: url('../assets/images/Desktop-bg.svg');
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 .downArrow {
@@ -99,8 +114,27 @@ img {
     will-change: opacity, visibility;
   }
 
+@media(max-width:1200px) {
+    .paletteTitle {
+        background-image: url('../assets/images/Desktop-bg.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #videoBG {
+        opacity: 0;
+    }
+}
+
 @media (max-width:575px) {
     .paletteTitle {
         background-image: url('../assets/images/Mobile-bg.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    #videoBG {
+        opacity: 0;
     }
 }
+
