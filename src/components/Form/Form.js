@@ -301,7 +301,6 @@ class Form extends Component {
                         
                     </div>
                     <button  onClick={this.newRegistration} className="registerButton">Register</button>
-                    {/* <p>Have an account? <button className="log-in-button">Log in</button></p> */}
                 </div>
             )
         }

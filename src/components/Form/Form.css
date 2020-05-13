@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 63vh;
+    height: 45vh;
 }
 
 .gicon {
@@ -21,7 +21,7 @@
     align-items: center;
     width: 300px;
     margin: auto;
-    height: 63vh;
+    height: 45vh;
 }
 
 .input-fields {
@@ -59,7 +59,7 @@
 
 @media (max-width:400px) {
     .form {
-        width: 250px;
+        width: 200px;
         height: 57vh;
     }
 

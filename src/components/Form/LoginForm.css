@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 45vh;
 }
 
 .gicon {
@@ -18,9 +18,12 @@
 .login-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 300px;
     margin: auto;
+    height: 45vh;
+    /* border: 1px solid red; */
 }
 
 .login-input-fields {

@@ -29,7 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/gif/desktop-bg.mp4');
+    background-image: url('../assets/images/Desktop-bg.svg');
     background-repeat: no-repeat;
     background-position: center;
     padding: 2em 2em;
@@ -78,7 +78,7 @@
     }
     
     .paletteTitleDashboard {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
     .logout-button {

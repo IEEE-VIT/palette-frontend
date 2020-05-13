@@ -32,15 +32,15 @@
     /* height: 55vh; */
     text-align:center;
     font-style: "Saira";
-    border-radius: 16px;
+    /* border-radius: 16px; */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.24);
 }
 
 .modal_header__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    /* align-items: center; */
     width: 100%;
     margin: 10px;
 }
@@ -56,4 +56,10 @@
 
 .modal_footer {
     cursor: pointer;
+}
+
+@media(max-width:575px) {
+    .Modal {
+        margin: 1.5em;
+    }
 }

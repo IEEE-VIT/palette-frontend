@@ -7,7 +7,6 @@ import firebase from '../utils/firebase';
 
 import './Dashboard.css';
 import Updates from '../components/Updates/Updates';
-import backgroundVideo from '../assets/gif/desktop-bg.mp4';
 
 class Dashboard extends Component {
     
@@ -39,9 +38,6 @@ class Dashboard extends Component {
                 </div>
 
                 <div className="center-text">
-                    <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
-                        <source src={backgroundVideo} type="video/mp4" />
-                    </video>
                     <div className="dashboard-content">
                         <p className="comingTitleDashboard">Coming to your screen in <strong className="timer-together"><Countdown end={1590100200} wordsEndingOff={true} text={text} /></strong></p>
                     </div>

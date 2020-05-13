@@ -15,6 +15,7 @@ import Collaborators from '../components/Collaborators/Collaborators';
 import Form from '../components/Form/Form';
 import LoadingGif from '../assets/gif/loading.gif';
 import AuthModal from '../components/AuthModal/AuthModal.js';
+import LogInForm from '../components/Form/LoginForm';
 
 import backgroundVideo from '../assets/gif/desktop-bg.mp4';
 
@@ -23,8 +24,9 @@ class LandingPage extends Component {
     constructor() {
         super();
         this.state = {
-            isLoading: false,
+            isLoading: true,
             isOpen: false,
+            mainPageLogInClick:false
         }
     }
 
@@ -50,6 +52,18 @@ class LandingPage extends Component {
         this.setState({
             isOpen: false,
         });
+    }
+
+    mainPageLogInOnClick = () => {
+        this.setState({
+            mainPageLogInClick:true
+        })
+    }
+
+    mainPageLogInOnClickReverse = () => {
+        this.setState({
+            mainPageLogInClick:false
+        })
     }
 
     render() {
@@ -147,7 +161,20 @@ class LandingPage extends Component {
                                 </Fade>
                                 <Fade bottom>
                                     <RegistrationText />
-                                    <Form />
+                                    {(this.state.mainPageLogInClick) 
+                                    ?
+                                        <LogInForm />
+                                        :
+                                        <Form />
+                                    }
+                                    {(this.state.mainPageLogInClick)
+                                    ?
+                                        <p> Don't have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClickReverse()}><strong>Sign Up</strong></button> </p>
+                                        :
+                                        <p>Have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClick()}>Log in</button></p>
+                                        
+                                    }
+                                    
                                 </Fade>
                             </div>
                         </div>

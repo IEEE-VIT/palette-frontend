@@ -23,15 +23,6 @@ class AuthModal extends React.Component {
             className="Modal" >
                <div>
                    <div className='modal_header__container'>
-                       <div className = 'modal_header__title'>
-                           {
-                               this.state.mode === 'register'
-                               ?
-                               'Register'
-                               :
-                               'Login'
-                           }
-                        </div>
                        <div className = 'modal_header__close-button' onClick={() => {
                            this.props.closeModal();
                        }}>X</div>
@@ -45,7 +36,7 @@ class AuthModal extends React.Component {
                             this.setState({
                                 mode: 'login'
                             });
-                        }}> Already have an account? </div>
+                        }}> Have an account? <strong>Log in</strong> </div>
                     </div>
                     :
                     <div>
@@ -54,7 +45,7 @@ class AuthModal extends React.Component {
                             this.setState({
                                 mode: 'register'
                             });
-                        }}> Not yet registered? </div>
+                        }}> Don't have an account? <strong>Sign Up</strong> </div>
                     </div>
                    }
                </div>

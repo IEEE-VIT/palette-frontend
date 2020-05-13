@@ -28,6 +28,10 @@
     border: none;
 }
 
+.navbar-toggle:focus {
+    outline: none;
+}
+
 @media (min-width:575px) {
     .navbar-buttons {
         margin-right: 30px;
