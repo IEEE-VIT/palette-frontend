@@ -1,0 +1,55 @@
+.ReactModalPortal > div {
+    opacity:0;
+}
+
+.ReactModalPortal .ReactModal__Overlay{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.Modal{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    color:black;
+    width: 60vh;
+    padding:20px;
+    outline: none;
+    /* height: 55vh; */
+    text-align:center;
+    font-style: "Saira";
+    border-radius: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.24);
+}
+
+.modal_header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.modal_header__title {
+    font-size: 34px;
+}
+.modal_header__close-button {
+    cursor: pointer;
+}
+
+.modal_footer {
+    cursor: pointer;
+}

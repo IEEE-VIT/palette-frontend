@@ -3,7 +3,7 @@ import Logo from '../../assets/images/Palette-logo.svg';
 import {Navbar, Nav} from 'react-bootstrap';
 import './NavBar.css';
 
-const NavBarComponent = () => {
+const NavBarComponent = ({openModal}) => {
     return(
         <div>
             <Navbar expand="sm" fixed="top" className="navbar">
@@ -15,6 +15,9 @@ const NavBarComponent = () => {
                     <Nav.Link className="nav-button" href="#contact">Contact</Nav.Link>
                     {/* <Nav.Link className="nav-button" href="#login">Log in</Nav.Link> */}
                     <Nav.Link className="register-button" href="#register">Register</Nav.Link>
+                    <Nav.Link className="register-button" href="" onClick={() => {
+                        openModal();
+                    }}>Login</Nav.Link>
                 </Navbar.Collapse>
             </Navbar>
         </div>

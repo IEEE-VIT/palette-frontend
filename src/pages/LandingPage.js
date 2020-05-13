@@ -14,6 +14,7 @@ import RegistrationText from '../components/RegistrationText/RegistrationText';
 import Collaborators from '../components/Collaborators/Collaborators';
 import Form from '../components/Form/Form';
 import LoadingGif from '../assets/gif/loading.gif';
+import AuthModal from '../components/AuthModal/AuthModal.js';
 
 import backgroundVideo from '../assets/gif/desktop-bg.mp4';
 
@@ -22,7 +23,8 @@ class LandingPage extends Component {
     constructor() {
         super();
         this.state = {
-            isLoading: false
+            isLoading: false,
+            isOpen: false,
         }
     }
 
@@ -36,6 +38,18 @@ class LandingPage extends Component {
         setTimeout(()=> {
             this.stopLoading();
         }, 3000)
+    }
+    
+    openModal = () => {
+        this.setState({
+            isOpen: true,
+        });
+    }
+
+    closeModal = () => {
+        this.setState({
+            isOpen: false,
+        });
     }
 
     render() {
@@ -56,7 +70,7 @@ class LandingPage extends Component {
                     <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
                         <source src={backgroundVideo} type="video/mp4" />
                     </video>
-                    <NavBarComponent />
+                    <NavBarComponent openModal={this.openModal}/>
                     <div className="paletteTitle">
                         <PaletteTitle />
                         <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
@@ -144,6 +158,7 @@ class LandingPage extends Component {
                             <Contact />
                     </footer>
                 </div>
+                <AuthModal isOpen={this.state.isOpen} closeModal={this.closeModal}/>
             </div>
         )
     }
