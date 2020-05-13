@@ -1,8 +1,9 @@
 .register-loading {
+    margin-top: 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    height: 50vh;
 }
 
 .gicon {
@@ -16,19 +17,20 @@
 }
 
 .form {
+    margin-top: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 300px;
     margin: auto;
-    height: 40vh;
+    height: 50vh;
 }
 
 .input-fields {
     width: 100%;
-    height: 30vh;
     display: flex;
+    height: 25vh;
     flex-direction: column;
     justify-content: space-evenly;
 }
@@ -60,17 +62,12 @@
 
 @media (max-width:600px) {
     .form {
-        width: 200px;
-        height: 70vh;
+        width: 80%;
+        height: 62vh;
     }
 
     .input-fields {
         height: 45vh;
-    }
-
-    .googleButton {
-        height: 20px;
-        margin-bottom: 0;
     }
 
     .googleButton {

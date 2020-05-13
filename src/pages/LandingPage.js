@@ -12,12 +12,12 @@ import Contact from '../components/Contact/Contact';
 import ArtWorkSlider from '../components/ArtWorkSlider/ArtWorkSlider';
 import RegistrationText from '../components/RegistrationText/RegistrationText';
 import Collaborators from '../components/Collaborators/Collaborators';
-import Form from '../components/Form/Form';
 import LoadingGif from '../assets/gif/loading.gif';
 import AuthModal from '../components/AuthModal/AuthModal.js';
-import LogInForm from '../components/Form/LoginForm';
 
 import backgroundVideo from '../assets/gif/desktop-bg.mp4';
+import LandingPageLoginForm from '../components/LandingPageForm/LandingPageLoginForm';
+import LandingPageForm from '../components/LandingPageForm/LandingPageForm';
 
 class LandingPage extends Component {
 
@@ -163,9 +163,9 @@ class LandingPage extends Component {
                                     <RegistrationText />
                                     {(this.state.mainPageLogInClick) 
                                     ?
-                                        <LogInForm />
+                                        <LandingPageLoginForm />
                                         :
-                                        <Form />
+                                        <LandingPageForm />
                                     }
                                     <Fade bottom>
                                         <div className="register-or-login-button">
