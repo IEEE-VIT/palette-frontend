@@ -14,10 +14,13 @@ import RegistrationText from '../components/RegistrationText/RegistrationText';
 import Collaborators from '../components/Collaborators/Collaborators';
 import LoadingGif from '../assets/gif/loading.gif';
 import AuthModal from '../components/AuthModal/AuthModal.js';
+import Timeline from '../assets/Timeline.pdf';
 
 import backgroundVideo from '../assets/gif/desktop-bg.mp4';
+import mobileBackgroundVideo from '../assets/gif/mob-bg.mp4';
 import LandingPageLoginForm from '../components/LandingPageForm/LandingPageLoginForm';
 import LandingPageForm from '../components/LandingPageForm/LandingPageForm';
+import windowSize from 'react-window-size';
 
 class LandingPage extends Component {
 
@@ -89,16 +92,30 @@ class LandingPage extends Component {
         return(
             <div>
                 {/* start */}
-                <div id="start">
-                    <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
-                        <source src={backgroundVideo} type="video/mp4" />
-                    </video>
-                    <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
-                    <div className="paletteTitle">
-                        <PaletteTitle />
-                        <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
+                {(this.props.windowWidth > 575)
+                    ?
+                    <div id="start">
+                        <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
+                            <source src={backgroundVideo} type="video/mp4" />
+                        </video>
+                        <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
+                        <div className="paletteTitle">
+                            <PaletteTitle />
+                            <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
+                        </div>
                     </div>
-                </div>
+                    :
+                    <div id="start">
+                        <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="MobilevideoBG">
+                            <source src={mobileBackgroundVideo} type="video/mp4" />
+                        </video>
+                        <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
+                        <div className="paletteTitle">
+                            <PaletteTitle />
+                            <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
+                        </div>
+                    </div>
+                }
 
                 <div style={{backgroundColor:"white"}} id="info">
 
@@ -123,7 +140,12 @@ class LandingPage extends Component {
                             </div>
                         </div>
                     </Fade>
-                    
+
+                    <div style={{marginTop:40}}>
+                        <Fade bottom>
+                            <a href={Timeline} className="timeline-button" target="_blank" rel="noopener noreferrer" > Show timeline </a>
+                        </Fade>
+                    </div>
                     
                     <div id="history">
 
@@ -203,4 +225,4 @@ class LandingPage extends Component {
     }
 }
 
-export default LandingPage;
+export default windowSize(LandingPage);
