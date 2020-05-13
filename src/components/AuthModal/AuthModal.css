@@ -19,6 +19,8 @@
 }
 
 .Modal{
+    /* margin: 0px 30px; */
+    margin-top: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -48,6 +50,8 @@
 }
 .modal_header__close-button {
     cursor: pointer;
+    margin: 0px 15px;
+    font-size: 21px;
 }
 
 .modal_footer {

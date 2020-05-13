@@ -201,7 +201,9 @@ class Form extends Component {
         const {name, email, password, loading} = this.state;
         if(loading) {
             return(
-                <Loading />
+                <div className = 'register-loading'>
+                    <Loading />
+                </div>
             )
         } else {
             return(

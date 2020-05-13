@@ -5,40 +5,24 @@ import firebase from '../../utils/firebase';
 import cookie from 'react-cookies';
 import validator from 'validator';
 
-import './Form.css';
+import './LoginForm.css';
 import Loading from '../Loading/Loading';
 
 class LoginForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name:'',
 			email:'',
 			password:'',
 			loaded: '',
 			loading: false,
-            nameError: false,
-            nameErrorText:'',
             emailError: false,
             emailErrorText:'',
             passwordError:false,
             passwordErrorText:'',
+            authStatus: '',
 		}
 	}
-
-	setName = (name) => {
-		this.setState({
-			name: name.target.value
-		})
-    }
-
-    checkValidName = (name) => {
-        if(name === '') {
-            return false;
-        } else {
-            return true;
-        }
-    }
 
 	setEmail = (email) => {
         this.setState({
@@ -68,8 +52,8 @@ class LoginForm extends Component {
         }
     }
 
-	//Google signup
-    signIn = async () => {
+	//Google login
+    gLogIn = async () => {
         this.setState({
             loading:true
         })
@@ -116,27 +100,14 @@ class LoginForm extends Component {
           }.bind(this));
     }
 
-	//Sign-up
-     newRegistration = () => {
+	//LogIn
+     logIn = () => {
         this.setState({
-            loading:true
-        })
+            loading:true,
+            authStatus: '',
+        });
+
         //Firebase auth
-
-        if(!this.checkValidName(this.state.name)) {
-            this.setState({
-                loading:false,
-                nameError:true,
-                nameErrorText:'Enter valid name'
-            })
-            return;
-        } else {
-            this.setState({
-                nameError:false,
-                nameErrorText:''
-            })
-        }
-
         if(!this.checkValidEmail(this.state.email)) {
             this.setState({
                 loading:false,
@@ -165,80 +136,41 @@ class LoginForm extends Component {
             })
         }
 
-        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then((data)=>{
-            //Call Rest API
-            fetch(`${process.env.REACT_APP_BACKEND_URL}/user/create`,{
-                method: "post",
-                headers: {
-                    'Content-type':'application/json',
-                    'Authorization': "Bearer "+data.user.uid
-                },
-                body: JSON.stringify({
-                    name: this.state.name,
-                    email: this.state.email,
-                })
-            }).then((data1)=>{
-                return data1.json();
-            }).then((data1)=>{
-                if (data1.statusCode !== 200) {
-                    this.setState({loading:false})
-                    alert(data1.payload.msg)
-                } else {
-                    window.location.href="/dashboard"
-                    cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
-                }
-            })
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then((data) => {
+            this.setState({
+                loading: false,
+            });
+            window.location.href="/dashboard"
+            cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
         })
-        .catch(function(error) {
-            console.log(this.state.error)
-            this.setState({TeacherError: "User already exists!"})
-        }.bind(this));
+        .catch((err) => {
+            console.log(err);
+            this.setState({
+                loading: false,
+                authStatus: 'Invalid email/password combination',
+            });
+        });
     }
 
 
 	render() {
-        const {name, email, password, loading} = this.state;
+        const {email, password, loading} = this.state;
         if(loading) {
             return(
-                <Loading />
+                <div className = 'login_loading-container'>
+                    <Loading />
+                </div>
             )
         } else {
             return(
-                <div className="form">
-                    <Button onClick={this.signIn} variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
+                <div className="login-form">
+                    <Button onClick={this.gLogIn} variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
                         <img src={googleIcon} alt="gicon" className="gicon" height="24" width="24"/>
                         Continue with Google
                     </Button>
                     <p>or</p>
-                    <div className="input-fields">
-                        {(this.state.nameError)
-                            ?
-                            <TextField
-                                error
-                                fullWidth={true}
-                                id="outlined-error-helper-text"
-                                label=""
-                                defaultValue={name}
-                                onChange={(name) => this.setName(name)}
-                                required
-                                helperText={this.state.nameErrorText}
-                                variant="outlined"
-                            />
-                            :
-                            <TextField
-                                id='outlined-error-helper-text'
-                                fullWidth={true}
-                                label="Name"
-                                variant="outlined"
-                                color="primary"
-                                value={name}
-                                onChange={(name) => this.setName(name)}
-                                required
-                                type='name'
-                                helperText=""
-                            />
-                        }
+                    <div className="login-input-fields">
                         {(this.state.emailError)
                             ?
                             <TextField
@@ -298,9 +230,8 @@ class LoginForm extends Component {
                         }
 
                     </div>
-                    <button   className="registerButton">Login</button>
-                    {/* onClick={this.newRegistration} */}
-                    {/* <p>Have an account? <button className="log-in-button">Log in</button></p> */}
+                    <div>{this.state.authStatus}</div>
+                    <button className="loginButton" onClick={this.logIn}>Login</button>
                 </div>
             )
         }

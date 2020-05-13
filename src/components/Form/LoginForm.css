@@ -1,3 +1,10 @@
+.login_loading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
 .gicon {
     margin-right: 5px;
 }
@@ -8,7 +15,7 @@
     height: 50px;
 }
 
-.form {
+.login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,15 +23,15 @@
     margin: auto;
 }
 
-.input-fields {
+.login-input-fields {
     width: 100%;
-    height: 230px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.registerButton {
+.loginButton {
     background-color: black;
     width: 130px;
     color: white;
@@ -34,7 +41,7 @@
     margin: 15px;
 }
 
-.registerButton:focus {
+.loginButton:focus {
     outline: none;
 }
 
