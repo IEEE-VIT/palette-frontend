@@ -31,7 +31,7 @@
     outline: none;
     /* height: 55vh; */
     text-align:center;
-    font-style: "Saira";
+    font-family: 'Montserrat';
     /* border-radius: 16px; */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.24);
 }
@@ -56,6 +56,7 @@
 
 .modal_footer {
     cursor: pointer;
+    font-family: 'Montserrat';
 }
 
 @media(max-width:575px) {

@@ -24,10 +24,25 @@ class LandingPage extends Component {
     constructor() {
         super();
         this.state = {
-            isLoading: false,
+            isLoading: true,
             isOpen: false,
+            whichModal:'',
             mainPageLogInClick:false
         }
+    }
+
+    forLoginModal = () => {
+        this.setState({
+            whichModal:'login',
+            isOpen:true
+        })
+    }
+
+    forRegisterModel = () => {
+        this.setState({
+            whichModal:'register',
+            isOpen:true
+        })
     }
 
     stopLoading = () => {
@@ -40,12 +55,6 @@ class LandingPage extends Component {
         setTimeout(()=> {
             this.stopLoading();
         }, 3000)
-    }
-    
-    openModal = () => {
-        this.setState({
-            isOpen: true,
-        });
     }
 
     closeModal = () => {
@@ -84,7 +93,7 @@ class LandingPage extends Component {
                     <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
                         <source src={backgroundVideo} type="video/mp4" />
                     </video>
-                    <NavBarComponent openModal={this.openModal}/>
+                    <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
                     <div className="paletteTitle">
                         <PaletteTitle />
                         <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
@@ -188,7 +197,7 @@ class LandingPage extends Component {
                             <Contact />
                     </footer>
                 </div>
-                <AuthModal isOpen={this.state.isOpen} closeModal={this.closeModal}/>
+                <AuthModal isOpen={this.state.isOpen} whichModal={this.state.whichModal} closeModal={this.closeModal} forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
             </div>
         )
     }

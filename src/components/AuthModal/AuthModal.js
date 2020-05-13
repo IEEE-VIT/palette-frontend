@@ -28,23 +28,19 @@ class AuthModal extends React.Component {
                        }}>X</div>
                    </div>
                    {
-                    this.state.mode === 'register'
+                    this.props.whichModal === 'register'
                     ?
                     <div>
                         <Form />
                         <div className = 'modal_footer' onClick={() => {
-                            this.setState({
-                                mode: 'login'
-                            });
+                            this.props.forLoginModal()
                         }}> Have an account? <strong>Log in</strong> </div>
                     </div>
                     :
                     <div>
                         <LoginForm />
                         <div className = 'modal_footer' onClick={() => {
-                            this.setState({
-                                mode: 'register'
-                            });
+                            this.props.forRegisterModel()
                         }}> Don't have an account? <strong>Sign Up</strong> </div>
                     </div>
                    }
