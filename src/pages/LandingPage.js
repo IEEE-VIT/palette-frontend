@@ -24,7 +24,7 @@ class LandingPage extends Component {
     constructor() {
         super();
         this.state = {
-            isLoading: true,
+            isLoading: false,
             isOpen: false,
             mainPageLogInClick:false
         }
@@ -167,14 +167,17 @@ class LandingPage extends Component {
                                         :
                                         <Form />
                                     }
-                                    {(this.state.mainPageLogInClick)
-                                    ?
-                                        <p> Don't have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClickReverse()}><strong>Sign Up</strong></button> </p>
-                                        :
-                                        <p>Have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClick()}>Log in</button></p>
-                                        
-                                    }
-                                    
+                                    <Fade bottom>
+                                        <div className="register-or-login-button">
+                                            {(this.state.mainPageLogInClick)
+                                            ?
+                                                <p> Don't have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClickReverse()}><strong>Sign Up</strong></button> </p>
+                                                :
+                                                <p>Have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClick()}>Log in</button></p>
+                                                
+                                            }
+                                        </div>  
+                                    </Fade>                                  
                                 </Fade>
                             </div>
                         </div>

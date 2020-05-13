@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45vh;
+    height: 40vh;
 }
 
 .gicon {
@@ -19,14 +19,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 300px;
     margin: auto;
-    height: 45vh;
+    height: 40vh;
 }
 
 .input-fields {
     width: 100%;
-    height: 230px;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -57,10 +58,19 @@
     outline: none;
 }
 
-@media (max-width:400px) {
+@media (max-width:600px) {
     .form {
         width: 200px;
-        height: 57vh;
+        height: 70vh;
+    }
+
+    .input-fields {
+        height: 45vh;
+    }
+
+    .googleButton {
+        height: 20px;
+        margin-bottom: 0;
     }
 
     .googleButton {

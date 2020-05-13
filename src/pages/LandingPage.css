@@ -120,6 +120,10 @@ img {
     will-change: opacity, visibility;
 }
 
+.register-or-login-button {
+    margin-top: 2em;
+}
+
 .log-in-button {
     background-color: white;
     outline: none;

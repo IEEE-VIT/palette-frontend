@@ -15,7 +15,7 @@ const NavBarComponent = ({openModal}) => {
                     <Nav.Link className="nav-button" href="#contact">Contact</Nav.Link>
                     <Nav.Link className="nav-button" href="" onClick={() => {
                         openModal();
-                    }}>Login</Nav.Link>
+                    }}>Log in</Nav.Link>
                     <Nav.Link className="register-button" href="#register">Register</Nav.Link>
                 </Navbar.Collapse>
             </Navbar>

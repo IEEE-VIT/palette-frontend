@@ -33,10 +33,10 @@ class Form extends Component {
     }
     
     checkValidName = (name) => {
-        if(name === '') {
-            return false;
-        } else {
+        if(validator.isAlpha(name) && name.length >= 3) {
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -236,7 +236,6 @@ class Form extends Component {
                                 color="primary"
                                 value={name}
                                 onChange={(name) => this.setName(name)}
-                                required
                                 type='name'
                                 helperText=""
                             />
@@ -264,7 +263,6 @@ class Form extends Component {
                                 color="primary"
                                 value={email}
                                 onChange={(email) => this.setEmail(email)}
-                                required
                                 type='email'
                                 helperText=""
                             />
@@ -293,7 +291,6 @@ class Form extends Component {
                                 InputLabelProps="textLight"
                                 value={password}
                                 onChange={(password) => this.setPassword(password)}
-                                required
                                 type='password'
                                 helperText=""
                             />
