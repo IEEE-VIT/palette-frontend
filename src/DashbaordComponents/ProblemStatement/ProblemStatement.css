@@ -1,0 +1,78 @@
+.problem-statment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em; 
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.problem-statement-title {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.problems-display {
+    justify-self: flex-start;
+    padding: 1em 0;
+    display: grid;
+    grid-template-columns: 5vw auto;
+    grid-template-rows: auto auto auto;
+}
+
+.problem-statement-category {
+    align-self: flex-start;
+    margin: 0.5em 0;
+}
+
+.generate-parent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.actual-lock-button {
+    margin: 0.6em 0;
+    border: none;
+    background-color: white;
+    align-self: flex-start;
+    padding-top: 8px;
+}
+
+.actual-lock-button:focus {
+    outline: none;
+}
+
+.problem-statement-category {
+    /* padding: 0.5em; */
+    font-size: 2em;
+    text-align: left;
+}
+
+.generate-lock-buttons {
+    padding: 1em;
+    border-top: 2px solid black;
+}
+
+.generate-button {
+    background-color: white;
+    border: none;
+}
+
+.generate-button:focus {
+    outline: none;
+}
+
+.row4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.column4 {
+    height: 100%;
+}

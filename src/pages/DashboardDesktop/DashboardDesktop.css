@@ -1,0 +1,39 @@
+.whole-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.dash-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    overflow-x: hidden;
+    /* border: 3px solid red; */
+    flex: 1;
+}
+
+.problem-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.column {
+    width: 47.5%;
+}
+
+.problem-instruction {
+    height: 100%;
+}
+
+.bottom-row {
+    /* border: 2px solid green; */
+    padding: 1em 0;
+    justify-self: flex-end;
+}
