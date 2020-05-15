@@ -11,29 +11,32 @@ import Updates from '../../DashbaordComponents/Updates/Updates';
 class DashboardDesktop extends React.Component {
     render() {
         return(
-            <div>
+            <div className="whole-page">
                 <div>
                     <DashboardNavbar />
                 </div>
                
                <section className="dash-menu">
-                <div className="row">
-                    <div className="column">
-                        <DashboardTimer />
-                        <ProblemStatement />
+                    <div className="row problem-instruction">
+                        <div className="column problem-left">
+                            <DashboardTimer />
+                            <ProblemStatement />
+                        </div>
+                        <div className="column">
+                            <Instructions />
+                        </div>
                     </div>
-                    <div className="column">
-                        <Instructions />
+
+                    <div className="bottom-row">
+                        <div className="row">
+                            <div className="column">
+                                <SubmissionField />
+                            </div>
+                            <div className="column">
+                                <Updates />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="column">
-                        <SubmissionField />
-                    </div>
-                    <div className="column">
-                        <Updates />
-                    </div>
-                </div>
                </section>
             </div>
         )

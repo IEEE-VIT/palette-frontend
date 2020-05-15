@@ -1,7 +1,13 @@
-/* .dashboard-title {
-    border: 1px solid red;
+.navbar-component {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 4em;
 }
 
-.navbar {
-    border: 2px solid green;
-} */
+.navbar-buttons {
+    background-color: white;
+    outline: none;
+    border: none;
+}

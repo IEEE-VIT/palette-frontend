@@ -1,5 +1,22 @@
+.whole-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .dash-menu {
-    margin-top: 6em;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    overflow-x: hidden;
+    /* border: 3px solid red; */
+    flex: 1;
+}
+
+.problem-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .row {
@@ -8,6 +25,15 @@
 }
 
 .column {
-    /* border: 1px solid red; */
-    width: 45%;
+    width: 47.5%;
+}
+
+.problem-instruction {
+    height: 100%;
+}
+
+.bottom-row {
+    /* border: 2px solid green; */
+    padding-bottom: 0.5em;
+    justify-self: flex-end;
 }
