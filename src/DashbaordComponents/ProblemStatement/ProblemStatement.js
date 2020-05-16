@@ -17,7 +17,8 @@ class ProblemStatement extends Component {
             secondStatement:'',
             thirdStatement:'',
             count:0,
-            isLocked:false
+            isLocked:false,
+            isLoading:false
         }
     }
 
@@ -44,41 +45,45 @@ class ProblemStatement extends Component {
     } 
 
     onGenerateNewClick = () => {
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/user/generateProblem`,{
-            method: "post",
-            headers: {
-                'Content-type':'application/json',
-                'Authorization': "Bearer "+ cookie.load('PALETTE').uid
-            },
-            body: JSON.stringify({
-                isLock1: this.state.isLock1,
-                isLock2: this.state.isLock2,
-                isLock3: this.state.isLock3
+        if(this.state.count !== 0) {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/user/generateProblem`,{
+                method: "post",
+                headers: {
+                    'Content-type':'application/json',
+                    'Authorization': "Bearer "+ cookie.load('PALETTE').uid
+                },
+                body: JSON.stringify({
+                    isLock1: this.state.isLock1,
+                    isLock2: this.state.isLock2,
+                    isLock3: this.state.isLock3
+                })
             })
-        })
-        .then(response => response.json())
-        .then(data => {
-            this.setState({
-                count:data.payload.count
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    count:data.payload.count
+                })
+                if(data.payload.newDesign!=="Locked") {
+                    this.setState({
+                        firstStatement: data.payload.newDesign
+                    })
+                }
+    
+                if(data.payload.newTo!=="Locked") {
+                    this.setState({
+                        secondStatement: data.payload.newTo
+                    })
+                }
+                
+                if(data.payload.newToHelp!=="Locked") {
+                    this.setState({
+                        thirdStatement: data.payload.newToHelp
+                    })
+                }
             })
-            if(data.payload.newDesign!=="Locked") {
-                this.setState({
-                    firstStatement: data.payload.newDesign
-                })
-            }
-
-            if(data.payload.newTo!=="Locked") {
-                this.setState({
-                    secondStatement: data.payload.newTo
-                })
-            }
-            
-            if(data.payload.newToHelp!=="Locked") {
-                this.setState({
-                    thirdStatement: data.payload.newToHelp
-                })
-            }
-        })
+        } else {
+            alert("Count is 0. Can't generate new")
+        }
     }
 
     onLockThisClick = () => {
@@ -112,40 +117,40 @@ class ProblemStatement extends Component {
                 <div className="problem-statement-title">
                     <h4><strong>Problem Statement</strong></h4>
                 </div>
-                
-                <div className="problems-display">
-                        <button className="actual-lock-button" onClick={()=> this.onLock1Click()}>
-                            {(this.state.isLock1) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
-                        </button>
-                        <span className="problem-statement-category"> Design a {this.state.firstStatement} </span>
-                        <button className="actual-lock-button" onClick={()=> this.onLock2Click()}>
-                            {(this.state.isLock2) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
-                        </button>
-                        <span className="problem-statement-category"> for {this.state.secondStatement} </span>
-                        <button className="actual-lock-button" onClick={()=> this.onLock3Click()}>
-                            {(this.state.isLock3) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
-                        </button>
-                        <span className="problem-statement-category"> to help {this.state.thirdStatement} </span>
-                </div>
-                <div>
-                    Temporary count display place: {this.state.count}
-                </div>
                 <div className="generate-parent">
+                    <div className="problems-display">
+                            <button className="actual-lock-button" onClick={()=> this.onLock1Click()}>
+                                {(this.state.isLock1) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
+                            </button>
+                            <span className="problem-statement-category"> Design a {this.state.firstStatement} </span>
+                            <button className="actual-lock-button" onClick={()=> this.onLock2Click()}>
+                                {(this.state.isLock2) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
+                            </button>
+                            <span className="problem-statement-category"> for {this.state.secondStatement} </span>
+                            <button className="actual-lock-button" onClick={()=> this.onLock3Click()}>
+                                {(this.state.isLock3) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
+                            </button>
+                            <span className="problem-statement-category"> to help {this.state.thirdStatement} </span>
+                    </div>
+                    <div>
+                        Temporary count display place: {this.state.count}
+                    </div>
+                
                     <div className="row4 generate-lock-buttons">
-                        <div className="column4">
+                        <div className="column4" style={{borderRight:"2px solid black"}} onClick={()=>this.onGenerateNewClick()}>
                             {(this.state.count===0 || this.state.isLocked)
                             ?
-                            <button className="generate-button" disabled><span> <img src={New} alt="new" /> Generate new </span></button>
+                            <div className="generate-button" disabled><span> <img src={New} alt="new" /> Generate new </span></div>
                             :
-                            <button className="generate-button" onClick={()=>this.onGenerateNewClick()}><span> <img src={New} alt="new" /> Generate new </span></button>
+                            <div className="generate-button"><span> <img src={New} alt="new" /> Generate new </span></div>
                             }
                         </div>
-                        <div className="column4">
+                        <div className="column4" onClick={()=>this.onLockThisClick()}>
                             {(this.state.isLocked)
                             ?
-                            <button className="generate-button" disabled><span> Lock this! </span></button>
+                            <div className="generate-button" disabled><span> Lock this! </span></div>
                             :
-                            <button className="generate-button" onClick={()=>this.onLockThisClick()}><span> Lock this! </span></button>
+                            <div className="generate-button"><span> Lock this! </span></div>
                             }
                         </div>
                     </div>
