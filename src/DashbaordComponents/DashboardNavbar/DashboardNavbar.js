@@ -24,8 +24,10 @@ class DashboardNavbar extends Component {
     render() {
         return(
             <div className="navbar-component">
-                <img src={Logo} alt="logo" />
-                <span><strong>Dashboard</strong></span>
+                <img src={Logo} alt="logo" className='dashboard-palette-logo'/>
+                <div className = 'dashboard-heading-container'>
+                    <span><strong>Dashboard</strong></span>
+                </div>
                 <div className="nav-button-div">
                     <button className="navbar-buttons-dashboard"><img src={TimelineLogo} alt="timeline-icon"/></button>
                     <button className="navbar-buttons-dashboard" onClick={this.signOut}><img src={LogoutLogo} alt="logout-icon"/></button>

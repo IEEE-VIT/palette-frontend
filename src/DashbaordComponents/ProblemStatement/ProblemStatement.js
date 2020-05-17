@@ -19,7 +19,8 @@ class ProblemStatement extends Component {
             thirdStatement:'',
             count:0,
             isLocked:false,
-            isLoading:false
+            isLoading:false,
+            dummy: 0,
         }
     }
 
@@ -47,10 +48,9 @@ class ProblemStatement extends Component {
 
     onGenerateNewClick = () => {
         this.setState({
-            isLoading:true
-        })
-        console.log("clicked generate")
-        console.log(this.state.isLoading)
+            isLoading:true,
+            dummy: 1,
+        });
         fetch(`${process.env.REACT_APP_BACKEND_URL}/user/generateProblem`,{
             method: "post",
             headers: {
@@ -86,12 +86,16 @@ class ProblemStatement extends Component {
                     thirdStatement: data.payload.newToHelp
                 })
             }
-        })
-        this.setState({
-            isLoading:false
-        })
-        console.log('generated')
-        console.log(this.state.isLoading)
+            
+            this.setState({
+                isLoading:false
+            });
+        }).catch((err) => {
+            console.log(err);
+            this.setState({
+                isLoading:false
+            });
+        });
     }
 
     onLockThisClick = () => {
