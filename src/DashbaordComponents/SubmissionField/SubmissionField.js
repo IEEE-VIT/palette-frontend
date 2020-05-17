@@ -4,8 +4,8 @@ import cookie from 'react-cookies';
 import './SubmissionField.css';
 
 class SubmissionField extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             link:'',
             buttonActive:true
@@ -34,10 +34,10 @@ class SubmissionField extends React.Component {
         })
         .then(response => response.json())
         .then(data => {
-            alert(data.payload.message)
+            console.log(data.payload.message)
         })
         .catch(err => {
-            alert("Problem")
+            console.log("Problem")
         })
     }
 

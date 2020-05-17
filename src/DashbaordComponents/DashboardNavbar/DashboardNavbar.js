@@ -25,7 +25,7 @@ class DashboardNavbar extends Component {
         return(
             <div className="navbar-component">
                 <img src={Logo} alt="logo" />
-                <h4><strong>Dashboard</strong></h4>
+                <span><strong>Dashboard</strong></span>
                 <div className="nav-button-div">
                     <button className="navbar-buttons-dashboard"><img src={TimelineLogo} alt="timeline-icon"/></button>
                     <button className="navbar-buttons-dashboard" onClick={this.signOut}><img src={LogoutLogo} alt="logout-icon"/></button>

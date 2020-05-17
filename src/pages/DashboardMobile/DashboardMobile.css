@@ -1,0 +1,23 @@
+.swipeable-views-mobile {
+    border: 1px solid red;
+    height: 80vh;
+}
+
+.information-mobile {
+    border: 1px solid blue;
+    height: 100%;
+}
+
+.tab-panel-information {
+    /* border: 2px solid green; */
+    height: 100%;
+}
+
+.swipeable-views-mobile > div[aria-hidden="false"] {
+    height: 80vh;
+    border: 1pxsolid green !important;
+}
+
+.swipeable-views-mobile > div[aria-hidden="true"] {
+    border: 1px solid brown;
+}

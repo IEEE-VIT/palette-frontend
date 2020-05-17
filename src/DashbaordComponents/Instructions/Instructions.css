@@ -23,3 +23,15 @@
 .instructions-list a {
     color: black;
 }
+
+@media(max-width: 600px) {
+    .instructions-list {
+        padding: 1em 0;
+    }
+
+    .instructions-list li {
+        padding-left: 0.25em;
+        padding-right: 0.2em;
+        padding-bottom: 0.5em;
+    }
+}

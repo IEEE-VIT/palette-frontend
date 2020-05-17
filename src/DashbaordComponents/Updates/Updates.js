@@ -5,7 +5,7 @@ import './Updates.css';
 const Updates = () => {
     return(
         <div className="updates-div">
-            <span>For more updates follow IEEE VIT on </span>
+            <span>Follow IEEE VIT on </span>
         </div>
     )
 }

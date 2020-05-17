@@ -183,7 +183,7 @@ class LandingPageLoginForm extends Component {
             }).then((data1)=>{
                 if (data1.statusCode !== 200) {
                     this.setState({loading:false})
-                    alert(data1.payload.msg)
+                    console.log(data1.payload.msg)
                 } else {
                     window.location.href="/dashboard"
                     cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
