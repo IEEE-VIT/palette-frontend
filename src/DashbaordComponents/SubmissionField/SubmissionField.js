@@ -46,7 +46,7 @@ class SubmissionField extends React.Component {
             <div className="submission-div">
                 <input 
                     className="submission-input" 
-                    placeholder="Enter the drive link containing images of your wireframes" 
+                    placeholder="Link to your wireframe" 
                     onChange={(link) => this.setLink(link)}
                 />
                 {(this.state.buttonActive) 

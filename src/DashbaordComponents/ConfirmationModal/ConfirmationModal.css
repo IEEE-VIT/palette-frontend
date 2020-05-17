@@ -1,0 +1,52 @@
+.confirmation-modal{
+    /* margin: 0px 30px; */
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    color:black;
+    width: 60vh;
+    padding:20px;
+    padding-top: 60px;
+    outline: none;
+    /* height: 55vh; */
+    text-align:center;
+    font-family: 'Montserrat';
+    /* border-radius: 16px; */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.24);
+}
+
+.confirmation-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.confirmation-button {
+    background-color: black;
+    width: 130px;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.confirmation-button-no {
+    background-color: white;
+    width: 130px;
+    color: black;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.confirmation-button:focus {
+    outline: none;
+}
+
+.confirmation-button-no:focus {
+    outline: none;
+}
