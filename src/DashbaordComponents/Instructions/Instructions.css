@@ -6,7 +6,8 @@
 
 .instructions-title {
     border-bottom: 2px solid black;
-    padding: 1em;
+    padding: 0.7em;
+    font-size: 1.5em;
 }
 
 .instructions-list {

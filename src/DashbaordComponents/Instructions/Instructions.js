@@ -6,7 +6,7 @@ const Instructions = () => {
     return(
         <div className="instructions">
             <div className="instructions-title">
-                <h4><strong>Instructions</strong></h4>
+                <strong>Instructions</strong>
             </div>
 
             <div className="instructions-list">

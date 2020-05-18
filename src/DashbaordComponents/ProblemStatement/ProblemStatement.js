@@ -171,7 +171,7 @@ class ProblemStatement extends Component {
                     {(this.state.isLoading)
                     ?   
                         <div className="problem-statement-loading">
-                            <h4><strong>Generating new</strong></h4>
+                            <strong>Generating new</strong>
                             <div id="wave">
                                 <span class="dot"></span>
                                 <span class="dot"></span>
@@ -179,7 +179,7 @@ class ProblemStatement extends Component {
                             </div>
                         </div>
                     :
-                        <h4><strong>Problem Statement</strong></h4>
+                        <strong>Problem Statement</strong>
                     }
                 </div>
                 <div className="generate-parent">
