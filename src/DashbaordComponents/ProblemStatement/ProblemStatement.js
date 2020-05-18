@@ -153,7 +153,10 @@ class ProblemStatement extends Component {
         .then(data => {
             console.log(data.payload.message)
             this.setState({
-                submittedTask:true
+                submittedTask:true,
+                isLock1:true,
+                isLock2:true,
+                isLock3:true
             })
         })
         .catch(err => {
@@ -180,26 +183,51 @@ class ProblemStatement extends Component {
                     }
                 </div>
                 <div className="generate-parent">
-                    <div className="problems-display">
-                        <button className="actual-lock-button" onClick={()=> this.onLock1Click()}>
-                            {(this.state.isLock1) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
-                        </button>
-                        <span className="problem-statement-category"> 
-                            Design a {this.state.firstStatement}
-                        </span>
-                        <button className="actual-lock-button" onClick={()=> this.onLock2Click()}>
-                            {(this.state.isLock2) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
-                        </button>
-                        <span className="problem-statement-category">
-                            for {this.state.secondStatement} 
-                        </span>
-                        <button className="actual-lock-button" onClick={()=> this.onLock3Click()}>
-                            {(this.state.isLock3) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
-                        </button>
-                        <span className="problem-statement-category"> 
-                            to help {this.state.thirdStatement} 
-                        </span>
-                    </div>
+                    {(this.state.submittedTask) 
+                    ?
+                        <div className="problems-display">
+                            <button className="actual-lock-button">
+                                <img src={Lock} alt="lock" className="lock-after-submitted" />
+                            </button>
+                            <span className="problem-statement-category"> 
+                                Design a {this.state.firstStatement}
+                            </span>
+                            <button className="actual-lock-button">
+                                <img src={Lock} alt="lock" className="lock-after-submitted" />
+                            </button>
+                            <span className="problem-statement-category">
+                                for {this.state.secondStatement} 
+                            </span>
+                            <button className="actual-lock-button">
+                                <img src={Lock} alt="lock" className="lock-after-submitted" />
+                            </button>
+                            <span className="problem-statement-category"> 
+                                to help {this.state.thirdStatement} 
+                            </span>
+                        </div>
+                    :
+                        <div className="problems-display">
+                            <button className="actual-lock-button" onClick={()=> this.onLock1Click()}>
+                                {(this.state.isLock1) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
+                            </button>
+                            <span className="problem-statement-category"> 
+                                Design a {this.state.firstStatement}
+                            </span>
+                            <button className="actual-lock-button" onClick={()=> this.onLock2Click()}>
+                                {(this.state.isLock2) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
+                            </button>
+                            <span className="problem-statement-category">
+                                for {this.state.secondStatement} 
+                            </span>
+                            <button className="actual-lock-button" onClick={()=> this.onLock3Click()}>
+                                {(this.state.isLock3) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
+                            </button>
+                            <span className="problem-statement-category"> 
+                                to help {this.state.thirdStatement} 
+                            </span>
+                        </div>
+                    }
+                    
 
                     {(this.state.submittedTask)
                     ?
