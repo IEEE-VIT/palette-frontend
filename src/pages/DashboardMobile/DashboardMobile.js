@@ -1,12 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import SwipeableViews from 'react-swipeable-views';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 import DashboardNavbar from '../../DashbaordComponents/DashboardNavbar/DashboardNavbar';
 import DashboardTimer from '../../DashbaordComponents/DashboardTimer/DashboardTimer';
@@ -17,120 +13,75 @@ import Updates from '../../DashbaordComponents/Updates/Updates';
 
 import './DashboardMobile.css';
 
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-  
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`full-width-tabpanel-${index}`}
-        aria-labelledby={`full-width-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box p={3}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
-    );
-  }
-  
-  TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
-  };
-  
-  function a11yProps(index) {
-    return {
-      id: `full-width-tab-${index}`,
-      'aria-controls': `full-width-tabpanel-${index}`,
-    };
-  }
-  
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      width: "100%",
-      backgroundColor: 'transparent',
+const styles = {
+    tabs: {
+        background: '#fff',
     },
-    palette: {
-        primary: "black",
-      },
-  }));
-  
-  function FullWidthTabs() {
-    // useEffect(()=> {
-    //     this.swipeableActions.updateHeight();
-    // }) 
-    const classes = useStyles();
-    const theme = useTheme();
-    const [value, setValue] = React.useState(0);
-  
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
-  
-    const handleChangeIndex = (index) => {
-      setValue(index);
-    };
-  
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="fullWidth"
-            aria-label="full width tabs example"
-          >
-            <Tab label="Hack" {...a11yProps(0)} />
-            <Tab label="Information" {...a11yProps(1)} />
-          </Tabs>
-        </AppBar>
-        <SwipeableViews
-          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={value}
-          onChangeIndex={handleChangeIndex}
-          // action={actions => {
-          //   this.swipeableActions = actions;
-          // }}
-          animateHeight
-          className="swipeable-views-mobile"
-        >
-          <TabPanel value={value} index={0} dir={theme.direction}>
-              <div>
-                <DashboardTimer />
-                <div>
-                    <ProblemStatemnet />
-                </div>
-                <SubmissionField />
-              </div>
-          </TabPanel>
-          <TabPanel value={value} index={1} dir={theme.direction} className="tab-panel-information">
-            <div className="information-mobile">
-                <Instructions />
-                <Updates />
-            </div>
-          </TabPanel>
-        </SwipeableViews>
-      </div>
-    );
-  }
+    slide: {
+        padding: 15
+    }
+};
 
-class DashboardMobile extends React.Component {
+const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#ffffff',
+      },
+      contrastThreshold: 3,
+      tonalOffset: 0.2,
+    },
+});
+
+class DashboardMobilee extends React.Component {
+    state = {
+        index: 0,
+      };
     
+    handleChange = (event, value) => {
+        this.setState({
+            index: value,
+        });
+    };
+
+    handleChangeIndex = index => {
+        this.setState({
+            index,
+        });
+    };
+
     render() {
+        const {index} = this.state;
         return(
             <div className="dashboard-mobile-screen">
                 <DashboardNavbar />
-                <FullWidthTabs />
+                <div>
+                    <Tabs value={index} indicatorColor="primary" variant="fullWidth" onChange={this.handleChange}>
+                        <Tab label="Hack" className="dashboard-tab" />
+                        <Tab label="Information" className="dashboard-tab" />
+                    </Tabs>
+                    <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex}>
+                    <div style={Object.assign({}, styles.slide, styles.slide1)}>
+                        <div>
+                            <DashboardTimer />
+                            <div>
+                                <ProblemStatemnet />
+                            </div>
+                            <SubmissionField />
+                        </div>
+                    </div>
+                    <div style={Object.assign({}, styles.slide, styles.slide2)}>
+                        <div className="information-mobile">
+                            <Instructions />
+                        </div>
+                        <div className="information-updates">
+                            <Updates />
+                        </div>
+                    </div>
+                    </SwipeableViews>
+                </div>
             </div>
         )
     }
 }
 
-export default DashboardMobile;
+export default DashboardMobilee;

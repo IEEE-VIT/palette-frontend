@@ -3,8 +3,8 @@ import windowSize from 'react-window-size';
 import firebase from '../utils/firebase';
 
 import './Dashboard.css';
-import DashboardMobile from './DashboardMobile/DashboardMobile';
 import DashboardDesktop from './DashboardDesktop/DashboardDesktop';
+import DashboardMobile from './DashboardMobile/DashboardMobile';
 
 class Dashboard extends Component {
 
