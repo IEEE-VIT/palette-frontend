@@ -30,20 +30,19 @@ class Dashboard extends Component {
             seconds: 's',
           }
         return(
-            <div>
-                <div className="navbar">
+            <div className="dashboard-div">
+                <div className="dashboard-navbar">
                     <img src={logo} alt='palette-logo' className="paletteLogoDashboard" />
                     <span className="paletteTitleDashboard"><strong>Palette ‘20</strong> </span>
                     <button onClick={this.signOut} className="logout-button"><img src={logout} alt='logout' /></button>
                 </div>
-
                 <div className="center-text">
                     <div className="dashboard-content">
                         <p className="comingTitleDashboard">Coming to your screen in <strong className="timer-together"><Countdown end={1590100200} wordsEndingOff={true} text={text} /></strong></p>
                     </div>
-                    <div className="end-updates">
-                        <Updates />
-                    </div>
+                </div>
+                <div className="end-updates">
+                    <Updates />
                 </div>
             </div>
         )

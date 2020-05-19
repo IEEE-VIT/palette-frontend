@@ -1,11 +1,18 @@
-#videoBG {
-    position:fixed;
-    z-index: -1;
+.dashboard-div {
     height: 100vh;
-    width: 100vw;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('../assets/images/Desktop-bg.svg');
     background-repeat: no-repeat;
-    /* background-position: center; */
+    background-position: center;
+}
+
+.dashboard-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 1em;
 }
 
 .paletteLogoDashboard {
@@ -24,14 +31,12 @@
 }
 
 .center-text {
-    height: 90vh;
+    /* height: 90vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/images/Desktop-bg.svg');
-    background-repeat: no-repeat;
-    background-position: center;
+    
     padding: 2em 2em;
 }
 
@@ -40,22 +45,22 @@
 }
 
 .end-updates {
-    bottom: 0;
+    padding-bottom: 1em;
 }
 
 .paletteTitleDashboard {
     font-size: 2em;
 }
 
-.dashboard-content {
+/* .dashboard-content {
     height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
 @media(max-width:1200px) {
-    .center-text {
+    .dashboard-div {
         background-image: url('../assets/images/Desktop-bg.svg');
         background-repeat: no-repeat;
         background-position: center;
@@ -67,7 +72,7 @@
 }
 
 @media (max-width:575px) {
-    .center-text {
+    .dashboard-div {
         background-image: url('../assets/images/Mobile-bg.svg');
         background-repeat: no-repeat;
         background-position: center;

@@ -15,6 +15,7 @@ import Collaborators from '../components/Collaborators/Collaborators';
 import LoadingGif from '../assets/gif/loading.gif';
 import AuthModal from '../components/AuthModal/AuthModal.js';
 import Timeline from '../assets/Timeline.pdf';
+import DeepLearningDemystified from '../assets/images/Deep-Learning-Demystified-Logo.svg';
 
 import backgroundVideo from '../assets/gif/desktop-bg.mp4';
 import mobileBackgroundVideo from '../assets/gif/mob-bg.mp4';
@@ -27,7 +28,7 @@ class LandingPage extends Component {
     constructor() {
         super();
         this.state = {
-            isLoading: true,
+            isLoading: false,
             isOpen: false,
             whichModal:'',
             mainPageLogInClick:false
@@ -101,7 +102,10 @@ class LandingPage extends Component {
                         <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
                         <div className="paletteTitle">
                             <PaletteTitle />
-                            <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
+                            <div className="downArrow">
+                                <p>Sponsored by</p>
+                                <img src={DeepLearningDemystified} alt="deeplearning"  />
+                            </div>
                         </div>
                     </div>
                     :
@@ -112,7 +116,10 @@ class LandingPage extends Component {
                         <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
                         <div className="paletteTitle">
                             <PaletteTitle />
-                            <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
+                            <div className="downArrow">
+                                <p>Sponsored by</p>
+                                <img src={DeepLearningDemystified} alt="deeplearning"  />
+                            </div>
                         </div>
                     </div>
                 }
