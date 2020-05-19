@@ -13,18 +13,18 @@ const Speakers = () => {
             <div className="speakers-div">
                 <div className="speaker-div">
                     <img src={Amit} alt="amit" className="speaker-image" />
-                    <p><strong>Amit Chilamwar</strong></p>
-                    <p>UX designer, inventindia Innovations</p>
+                    <a href="http://instagram.com/amit_chilamwar" className="speaker-name" target="__blank" rel="noopener noreferrer"><p>Amit Chilamwar</p></a>
+                    <span>UX designer, inventindia Innovations</span>
                 </div>
                 <div className="speaker-div">
                     <img src={Chethan} alt="amit" className="speaker-image" />
-                    <p><strong>Chethan KVS</strong></p>
-                    <p>Product designer, Unacademy</p>
+                    <a href="http://instagram.com/design_pilot" className="speaker-name" target="__blank" rel="noopener noreferrer"><p>Chethan KVS</p></a>
+                    <span>Product designer, Unacademy</span>
                 </div>
                 <div className="speaker-div">
                     <img src={Abhinav} alt="amit" className="speaker-image" />
-                    <p><strong>Abhinav Agrawal</strong></p>
-                    <p>Product designer, Airtel</p>
+                    <a href="http://instagram.com/abhinavagr180"  className="speaker-name" target="__blank" rel="noopener noreferrer"><p>Abhinav Agrawal</p></a>
+                    <span>Product designer, Airtel</span>
                 </div>
             </div>
         </div>
