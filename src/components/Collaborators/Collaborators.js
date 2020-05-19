@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Swiggy from '../../assets/images/swiggy-logo.svg';
-import Flipkart from '../../assets/images/flipkart-logo.svg';
+import Dailyuix from '../../assets/images/dailyuix.svg';
+
 
 import './Collaborators.css';
 
 const Collaborators = () => {
     return(
         <div className="collaborator">
-            <img src={Flipkart} alt="Flipkart" />
-            <img src={Swiggy} alt="Swiggy" />
+            <img src={Dailyuix} alt="dailyuix" className="collaborator-image" />
+            <a href="instagram.com/dailyuix" target="__blank" rel="noopener noreferrer" className="collaborator-link">instagram.com/dailyuix</a>
         </div>
     )
 }

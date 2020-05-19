@@ -4,7 +4,6 @@ import PaletteTitle from '../components/PaletteTitle/PaletteTitle';
 import Title from '../components/Title/Title';
 import Fade from 'react-reveal/Fade';
 
-import down from '../assets/images/down.svg';
 import solveProblems from '../assets/images/solveProblems.svg';
 
 import './LandingPage.css';
@@ -22,13 +21,14 @@ import mobileBackgroundVideo from '../assets/gif/mob-bg.mp4';
 import LandingPageLoginForm from '../components/LandingPageForm/LandingPageLoginForm';
 import LandingPageForm from '../components/LandingPageForm/LandingPageForm';
 import windowSize from 'react-window-size';
+import Speakers from '../components/Speakers/Speakers';
 
 class LandingPage extends Component {
 
     constructor() {
         super();
         this.state = {
-            isLoading: false,
+            isLoading: true,
             isOpen: false,
             whichModal:'',
             mainPageLogInClick:false
@@ -153,6 +153,12 @@ class LandingPage extends Component {
                             <a href={Timeline} className="timeline-button" target="_blank" rel="noopener noreferrer" > Show timeline </a>
                         </Fade>
                     </div>
+
+                    <Fade bottom>
+                        <div>
+                            <Speakers />
+                        </div>
+                    </Fade>
                     
                     <div id="history">
 
@@ -181,13 +187,11 @@ class LandingPage extends Component {
                     </Fade>
 
                     <Fade bottom>
-                        <div className="">
-                            <div className="container">
-                                <p className="content-para">
-                                    <strong>Past collaborators</strong>
-                                </p>
-                                <Collaborators />
-                            </div>
+                        <div className="container">
+                            <p className="content-para">
+                                <strong>Collaborators</strong>
+                            </p>
+                            <Collaborators />
                         </div>
                     </Fade>
 
