@@ -103,8 +103,8 @@ class LandingPage extends Component {
                         <div className="paletteTitle">
                             <PaletteTitle />
                             <div className="downArrow">
-                                <p>Sponsored by</p>
-                                <img src={DeepLearningDemystified} alt="deeplearning"  />
+                                <p>Powered by</p>
+                                <a href="https://deeplearningdemystified.com/" target="__blank" rel="noopener noreferrer"><img src={DeepLearningDemystified} alt="deeplearning"  /></a>
                             </div>
                         </div>
                     </div>
