@@ -2,6 +2,9 @@
     border: 2px solid black;
     border-radius: 8px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .instructions-title {
@@ -23,6 +26,10 @@
 
 .instructions-list a {
     color: black;
+}
+
+.dld-logo {
+    margin-bottom: 1em;
 }
 
 @media(max-width: 600px) {

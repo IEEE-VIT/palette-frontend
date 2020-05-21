@@ -13,6 +13,16 @@
     margin: 0 0.5em;
 }
 
+.ieee-vit-link {
+    color: black;
+    margin: 0 0.3em;
+    font-weight: 600;
+}
+
+.ieee-vit-link:hover {
+    color: black;
+}
+
 @media (max-width: 400px) {
     .updates-div {
         flex-direction: column;

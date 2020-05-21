@@ -12,7 +12,7 @@ class ConfirmationModal extends Component {
                 contentLabel = "confirm"
                 closeTimeoutMS={200}
                 className="confirmation-modal" >
-                    <p>Do you want to confirm this as your task?</p>
+                    <p><strong>Do you want to confirm this as your task?</strong></p>
                     <p>{this.props.task}</p>
                     <div className="confirmation-buttons">
                         <button className="confirmation-button-no" onClick={()=>this.props.forModal()}>No</button>

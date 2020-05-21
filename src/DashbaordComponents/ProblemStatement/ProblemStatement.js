@@ -173,9 +173,9 @@ class ProblemStatement extends Component {
                         <div className="problem-statement-loading">
                             <strong>Generating new</strong>
                             <div id="wave">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
+                                <span className="dot"></span>
+                                <span className="dot"></span>
+                                <span className="dot"></span>
                             </div>
                         </div>
                     :

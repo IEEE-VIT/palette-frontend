@@ -97,7 +97,7 @@ class LandingPageLoginForm extends Component {
           }).catch(function(error) {
               console.log(error)
             that.setState({loaded:true})
-          }.bind(this));
+          });
     }
 
 	//LogIn

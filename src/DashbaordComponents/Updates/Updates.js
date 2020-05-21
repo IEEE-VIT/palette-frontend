@@ -9,7 +9,7 @@ import './Updates.css';
 const Updates = () => {
     return(
         <div className="updates-div">
-            Follow IEEE VIT on
+            Follow <a href="https://ieeevit.org/" target="__blank" rel="noopener noreferrer" className="ieee-vit-link"> IEEE VIT </a> on
             <div className="updatesIcons">
                 <a href="https://www.facebook.com/IEEEVIT/" target="__blank" rel="noopener noreferrer"><img src={FacebookUpdates} className="updateIcons" alt='updates-facebook' /></a>
                 <a href="https://www.instagram.com/ieeevitvellore/?hl=en" target="__blank" rel="noopener noreferrer"><img src={InstagramUpdates} className="updateIcons" alt='updates-instagram' /></a>

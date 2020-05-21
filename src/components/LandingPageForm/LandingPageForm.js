@@ -113,7 +113,7 @@ class LandingPageLoginForm extends Component {
           }).catch(function(error) {
               console.log(error)
             that.setState({loaded:true})
-          }.bind(this));
+          });
     }
 	
 	//Sign-up
@@ -193,7 +193,7 @@ class LandingPageLoginForm extends Component {
         .catch(function(error) {
             console.log(this.state.error)
             this.setState({TeacherError: "User already exists!"})
-        }.bind(this));
+        });
     }
 
 

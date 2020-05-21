@@ -2,7 +2,6 @@ import React from 'react';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SwipeableViews from 'react-swipeable-views';
-import { createMuiTheme } from '@material-ui/core/styles';
 
 import DashboardNavbar from '../../DashbaordComponents/DashboardNavbar/DashboardNavbar';
 import DashboardTimer from '../../DashbaordComponents/DashboardTimer/DashboardTimer';
@@ -21,16 +20,6 @@ const styles = {
         padding: 15
     }
 };
-
-const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: '#ffffff',
-      },
-      contrastThreshold: 3,
-      tonalOffset: 0.2,
-    },
-});
 
 class DashboardMobilee extends React.Component {
     state = {
