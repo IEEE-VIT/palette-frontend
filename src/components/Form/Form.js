@@ -208,7 +208,7 @@ class Form extends Component {
         } else {
             return(
                 <div className="form">
-                    <Button onClick={this.signIn} variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
+                    <Button onClick={this.signIn} target="__blank" rel="noopener noreferrer" variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
                         <img src={googleIcon} alt="gicon" className="gicon" height="24" width="24"/>
                         Continue with Google
                     </Button> 
