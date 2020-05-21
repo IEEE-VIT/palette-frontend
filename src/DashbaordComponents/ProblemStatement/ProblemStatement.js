@@ -110,9 +110,15 @@ class ProblemStatement extends Component {
             }
 
             if(data.payload.newTo!=="Locked") {
-                this.setState({
-                    secondStatement: data.payload.newTo
-                })
+                if(this.state.count === 1) {
+                    this.setState({
+                        secondStatement: "Deep Learning Demystified"
+                    })
+                } else {
+                    this.setState({
+                        secondStatement: data.payload.newTo
+                    })
+                }
             }
             
             if(data.payload.newToHelp!=="Locked") {
@@ -246,19 +252,26 @@ class ProblemStatement extends Component {
                         ?
                             <div className="row4 generate-lock-buttons">
                                 <div className="column4-disabled" style={{borderRight:"2px solid black"}}>
-                                    <div className="generate-button" disabled><span> <img src={New} alt="new" style={{opacity:0.8}} /> Generate new </span></div>
+                                    <div className="generate-button"><span> <img src={New} alt="new" style={{opacity:0.8}} /> Generate new </span></div>
                                 </div>
                                 <div className="column4-disabled">
-                                    <div className="generate-button" disabled><span> <img src={Confirm} alt="new" style={{opacity:0.8}} /> Confirm this </span></div>
+                                    <div className="generate-button"><span> <img src={Confirm} alt="new" style={{opacity:0.8}} /> Confirm this </span></div>
                                 </div>
                             </div>
                         :
                             <div className="row4 generate-lock-buttons">
-                                <div className="column4" style={{borderRight:"2px solid black"}} onClick={()=>this.onGenerateNewClick()}>
-                                    <div className="generate-button" disabled><span> <img src={New} alt="new" /> Generate new </span></div>
-                                </div>
+                                {(this.state.count === 0)
+                                ?
+                                    <div className="column4-disabled" style={{borderRight:"2px solid black"}}>
+                                        <div className="generate-button"><span> <img src={New} alt="new" /> Generate new </span></div>
+                                    </div>
+                                :
+                                    <div className="column4" style={{borderRight:"2px solid black"}} onClick={()=>this.onGenerateNewClick()}>
+                                        <div className="generate-button"><span> <img src={New} alt="new" /> Generate new </span></div>
+                                    </div>
+                                }                                
                                 <div className="column4" onClick={()=>this.forModal()}>
-                                    <div className="generate-button" disabled><span> <img src={Confirm} alt="new" /> Confirm this </span></div>
+                                    <div className="generate-button"><span> <img src={Confirm} alt="new" /> Confirm this </span></div>
                                 </div>
                             </div>
                         }
