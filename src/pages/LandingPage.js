@@ -4,7 +4,6 @@ import PaletteTitle from '../components/PaletteTitle/PaletteTitle';
 import Title from '../components/Title/Title';
 import Fade from 'react-reveal/Fade';
 
-import down from '../assets/images/down.svg';
 import solveProblems from '../assets/images/solveProblems.svg';
 
 import './LandingPage.css';
@@ -15,12 +14,14 @@ import Collaborators from '../components/Collaborators/Collaborators';
 import LoadingGif from '../assets/gif/loading.gif';
 import AuthModal from '../components/AuthModal/AuthModal.js';
 import Timeline from '../assets/Timeline.pdf';
+import DeepLearningDemystified from '../assets/images/Deep-Learning-Demystified-Logo.svg';
 
 import backgroundVideo from '../assets/gif/desktop-bg.mp4';
 import mobileBackgroundVideo from '../assets/gif/mob-bg.mp4';
 import LandingPageLoginForm from '../components/LandingPageForm/LandingPageLoginForm';
 import LandingPageForm from '../components/LandingPageForm/LandingPageForm';
 import windowSize from 'react-window-size';
+import Speakers from '../components/Speakers/Speakers';
 
 class LandingPage extends Component {
 
@@ -101,7 +102,10 @@ class LandingPage extends Component {
                         <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
                         <div className="paletteTitle">
                             <PaletteTitle />
-                            <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
+                            <div className="downArrow">
+                                <p>Powered by</p>
+                                <a href="https://deeplearningdemystified.com/" target="__blank" rel="noopener noreferrer"><img src={DeepLearningDemystified} alt="deeplearning"  /></a>
+                            </div>
                         </div>
                     </div>
                     :
@@ -112,7 +116,10 @@ class LandingPage extends Component {
                         <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
                         <div className="paletteTitle">
                             <PaletteTitle />
-                            <a href="#info"><img src={down} alt="down" className="downArrow" /></a>
+                            <div className="downArrow">
+                                <p>Sponsored by</p>
+                                <img src={DeepLearningDemystified} alt="deeplearning"  />
+                            </div>
                         </div>
                     </div>
                 }
@@ -146,6 +153,12 @@ class LandingPage extends Component {
                             <a href={Timeline} className="timeline-button" target="_blank" rel="noopener noreferrer" > Show timeline </a>
                         </Fade>
                     </div>
+
+                    <Fade bottom>
+                        <div>
+                            <Speakers />
+                        </div>
+                    </Fade>
                     
                     <div id="history">
 
@@ -174,13 +187,11 @@ class LandingPage extends Component {
                     </Fade>
 
                     <Fade bottom>
-                        <div className="">
-                            <div className="container">
-                                <p className="content-para">
-                                    <strong>Past collaborators</strong>
-                                </p>
-                                <Collaborators />
-                            </div>
+                        <div className="container">
+                            <p className="content-para">
+                                <strong>Collaborators</strong>
+                            </p>
+                            <Collaborators />
                         </div>
                     </Fade>
 
