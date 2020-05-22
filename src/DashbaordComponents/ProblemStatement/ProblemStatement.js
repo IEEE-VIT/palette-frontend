@@ -22,7 +22,8 @@ class ProblemStatement extends Component {
             submittedTask:false,
             isLoading:false,
             isOpen:false,
-            task:''
+            task:'',
+            link1:''
         }
     }
 
@@ -69,8 +70,22 @@ class ProblemStatement extends Component {
             // console.log(data);  
             this.setState({
                 count:data.payload.count,
-                submittedTask:data.payload.submittedTask
+                submittedTask:data.payload.submittedTask,
             })
+            console.log(data.payload.link1)
+            if(data.payload.link1 !== "") {
+                this.props.updateLinkState()
+                if(data.payload.link1.includes('http://') || data.payload.link1.includes('https://')) {
+                    this.setState({
+                        link1:data.payload.link1
+                    })
+                } else {
+                    this.setState({
+                        link1:"https://"+data.payload.link1
+                    })
+                }
+            }
+            
             if(data.payload.submittedTask) {
                 this.setState({
                     firstStatement:data.payload.design,
@@ -242,6 +257,16 @@ class ProblemStatement extends Component {
                     <div>
                         Time's Up! Sorry, you cannot generate a problem statement anymore.
                     </div>
+                    }
+
+                    {(this.state.link1 === "")
+                    ?
+                        <div>
+                        </div>
+                    :
+                        <div>
+                            <strong><a href={this.state.link1} target="__blank" rel="noopener noreferrer" className="submit-link-div-element">Submitted link</a></strong>
+                        </div>
                     }
 
                     {/* {(this.state.submittedTask)

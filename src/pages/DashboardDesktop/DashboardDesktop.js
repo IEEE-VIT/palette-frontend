@@ -13,8 +13,15 @@ class DashboardDesktop extends React.Component {
     constructor() {
         super();
         this.state = {
-            isPageLoading:true
+            isPageLoading:true,
+            isLinkSubmitted:false
         }
+    }
+
+    updateLinkState = () => {
+        this.setState({
+            isLinkSubmitted:true
+        })
     }
 
     componentWillMount() {
@@ -41,7 +48,7 @@ class DashboardDesktop extends React.Component {
                         <div className="row problem-instruction">
                             <div className="column problem-left">
                                 <DashboardTimer />
-                                <ProblemStatement />
+                                <ProblemStatement updateLinkState={this.updateLinkState} />
                             </div>
                             <div className="column">
                                 <Instructions />
@@ -51,7 +58,7 @@ class DashboardDesktop extends React.Component {
                         <div className="bottom-row">
                             <div className="row">
                                 <div className="column">
-                                    <SubmissionField />
+                                    <SubmissionField isLinkSubmitted={this.state.isLinkSubmitted} />
                                 </div>
                                 <div className="column">
                                     <Updates />

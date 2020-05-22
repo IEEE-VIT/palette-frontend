@@ -51,6 +51,14 @@
     text-align: left;
 }
 
+.submit-link-div-element {
+    color: black;
+}
+
+.submit-link-div-element:hover   {
+    color: black;
+}
+
 .generate-lock-buttons {
     border-top: 2px solid black;
 }

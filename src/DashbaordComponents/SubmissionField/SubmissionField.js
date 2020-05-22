@@ -10,7 +10,7 @@ class SubmissionField extends React.Component {
         this.state = {
             link:'',
             buttonActive:true,
-            placeholderText:"This will be enabled once Round 1 calls are done to submit your final link for submission.",
+            placeholderText:"Link to your final submission",
             isChangeModal:false
         }
     }
@@ -43,6 +43,13 @@ class SubmissionField extends React.Component {
                 })
             })
             .then(response => response.json())
+            .then(() => {
+                this.setState({
+                    placeholder:"Link as been Submitted Successfully.",
+                    link:'',
+                    buttonActive:false
+                })
+            })
             // .then(data => {
             //     console.log(data.payload.message)
             // })
@@ -63,26 +70,26 @@ class SubmissionField extends React.Component {
         return(
             <div>
                 
-                {(this.state.buttonActive) 
+                {(this.props.isLinkSubmitted) 
                     ? 
                     <div className="submission-div">
                         <input 
                             className="submission-input" 
-                            placeholder={this.state.placeholderText}
+                            placeholder="Change the link of your submission"
                             onChange={(link) => this.setLink(link)}
                             value={this.state.link}
                         />
-                        <button className="submission-button" style={{opacity:0.8}}><strong>Submit</strong></button> 
+                        <button className="submission-button" onClick={()=>this.onSubmit()}><strong>Change</strong></button> 
                     </div>
                     : 
                     <div className="submission-div">
                         <input 
                             className="submission-input" 
-                            placeholder="Change link"
+                            placeholder="Link to your wireframe"
                             onChange={(link) => this.setLink(link)}
                             value={this.state.link}
                         />
-                        <button className="submission-button" onClick={()=>this.onSubmit()}><strong>Change</strong></button>
+                        <button className="submission-button" onClick={()=>this.onSubmit()}><strong>Submit</strong></button>
                     </div>
                 }
             </div>
