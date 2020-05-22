@@ -217,7 +217,7 @@ class ProblemStatement extends Component {
                                 {(this.state.isLock1) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
                             </button>
                             <span className="problem-statement-category"> 
-                                Design a {this.state.firstStatement}
+                                Design {this.state.firstStatement}
                             </span>
                             <button className="actual-lock-button" onClick={()=> this.onLock2Click()}>
                                 {(this.state.isLock2) ? <img src={Lock} alt="lock" /> : <img src={Unlock} alt="unlock" /> }
