@@ -203,21 +203,16 @@ class LandingPage extends Component {
                                 </Fade>
                                 <Fade bottom>
                                     <RegistrationText />
-                                    {(this.state.mainPageLogInClick) 
-                                    ?
-                                        <LandingPageLoginForm />
-                                        :
-                                        <LandingPageForm />
-                                    }
+                                    <LandingPageLoginForm />
                                     <Fade bottom>
                                         <div className="register-or-login-button">
-                                            {(this.state.mainPageLogInClick)
+                                            {/* {(this.state.mainPageLogInClick)
                                             ?
                                                 <p> Don't have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClickReverse()}><strong>Sign Up</strong></button> </p>
                                                 :
                                                 <p>Have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClick()}>Log in</button></p>
                                                 
-                                            }
+                                            } */}
                                         </div>  
                                     </Fade>                                  
                                 </Fade>
