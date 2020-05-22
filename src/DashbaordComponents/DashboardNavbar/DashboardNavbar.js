@@ -4,6 +4,7 @@ import TimelineLogo from '../../assets/images/timeline-icon.svg';
 import LogoutLogo from '../../assets/images/logout.svg';
 import cookie from 'react-cookies';
 import firebase from '../../utils/firebase';
+import Timeline from '../../assets/Timeline.pdf';
 
 import './DashboardNavbar.css';
 
@@ -29,7 +30,7 @@ class DashboardNavbar extends Component {
                     <span><strong>Dashboard</strong></span>
                 </div>
                 <div className="nav-button-div">
-                    <button className="navbar-buttons-dashboard"><img src={TimelineLogo} alt="timeline-icon"/></button>
+                    <a className="navbar-buttons-dashboard" href={Timeline} target="__blank" rel="noopener noreferrer" ><img src={TimelineLogo} alt="timeline-icon"/></a>
                     <button className="navbar-buttons-dashboard" onClick={this.signOut}><img src={LogoutLogo} alt="logout-icon"/></button>
                 </div>
             </div>
