@@ -72,11 +72,12 @@ class LoginForm extends Component {
                 },
             })
             .then(data => {
+                console.log(data.status);
                 if(data.status === 200) {
                     const expires = new Date()
                     expires.setDate(Date.now() + 1000 * 60 * 60 * 1)
                     cookie.save('PALETTE',{uid: user.uid, email: user.email},{path:'/'});
-                    console.log("in dashboard")
+                    // console.log("in dashboard")
                     window.location.href = "/dashboard";
                     that.setState({loaded:true})
                 } else {
@@ -167,7 +168,7 @@ class LoginForm extends Component {
         } else {
             return(
                 <div className="login-form">
-                    <Button onClick={this.gLogIn} variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
+                    <Button onClick={this.gLogIn} target="__blank" rel="noopener noreferrer" variant="outlined" className="googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
                         <img src={googleIcon} alt="gicon" className="gicon" height="24" width="24"/>
                         Continue with Google
                     </Button>

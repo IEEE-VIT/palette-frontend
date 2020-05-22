@@ -50,13 +50,11 @@ img {
 }
 
 .downArrow {
-    justify-content: flex-end;
+    justify-content: center;
     bottom: 0;
     position: absolute;
     margin-bottom: 1em;
-    -moz-animation: bounce 2s infinite;
-    -webkit-animation: bounce 2s infinite;
-    animation: bounce 2s infinite;
+    background-color: white;
 }
 
 @keyframes bounce {

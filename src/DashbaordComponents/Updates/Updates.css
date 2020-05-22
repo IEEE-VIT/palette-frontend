@@ -3,4 +3,40 @@
     border: 2px solid black;
     border-radius: 8px;
     padding: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.updateIcons {
+    margin: 0 0.5em;
+}
+
+.ieee-vit-link {
+    color: black;
+    margin: 0 0.3em;
+    font-weight: 600;
+}
+
+.ieee-vit-link:hover {
+    color: black;
+}
+
+@media (max-width: 400px) {
+    .updates-div {
+        flex-direction: column;
+    }
+
+    .updatesIcons {
+        width: 100%;
+        margin-top: 0.7em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .updateIcons {
+        margin: 0 0;
+    }
 }

@@ -103,7 +103,7 @@ class LandingPageLoginForm extends Component {
                 cookie.save('PALETTE',{uid: user.uid, email: user.email},{path:'/'});
             })
             .then(() => {
-                console.log("in dashboard")
+                // console.log("in dashboard")
                 window.location.href = "/dashboard";
                 that.setState({loaded:true})
             })
@@ -111,9 +111,9 @@ class LandingPageLoginForm extends Component {
                 that.setState({loaded:true})
             });
           }).catch(function(error) {
-              console.log(error)
+            //   console.log(error)
             that.setState({loaded:true})
-          }.bind(this));
+          });
     }
 	
 	//Sign-up
@@ -183,7 +183,7 @@ class LandingPageLoginForm extends Component {
             }).then((data1)=>{
                 if (data1.statusCode !== 200) {
                     this.setState({loading:false})
-                    console.log(data1.payload.msg)
+                    // console.log(data1.payload.msg)
                 } else {
                     window.location.href="/dashboard"
                     cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
@@ -191,9 +191,9 @@ class LandingPageLoginForm extends Component {
             })
         })
         .catch(function(error) {
-            console.log(this.state.error)
+            // console.log(this.state.error)
             this.setState({TeacherError: "User already exists!"})
-        }.bind(this));
+        });
     }
 
 
@@ -208,7 +208,7 @@ class LandingPageLoginForm extends Component {
         } else {
             return(
                 <div className="LandingPageForm">
-                    <Button onClick={this.signIn} variant="outlined" className="Landing-googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
+                    <Button onClick={this.signIn} target="__blank" rel="noopener noreferrer" variant="outlined" className="Landing-googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
                         <img src={googleIcon} alt="gicon" className="Landing-gicon" height="24" width="24"/>
                         Continue with Google
                     </Button> 

@@ -13,6 +13,7 @@
 
 .dashboard-heading-container {
     width: 100%;
+    font-size: 1.5em;
 }
 
 .nav-button-div {
@@ -34,9 +35,18 @@
     outline: none;
 }
 
-@media (max-width:575px) {
+@media (max-width:768px) {
     .navbar-component {
-        padding: 1em 2em;
+        padding: 0.5em 1em;
+    }
+
+    .nav-button-div {
+        width: 20vh;
+        justify-content: space-around;
+    }
+
+    .dashboard-heading-container {
+        font-size: 1em;
     }
 }
 

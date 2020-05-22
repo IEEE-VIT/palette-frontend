@@ -1,5 +1,6 @@
 import React from 'react';
 import cookie from 'react-cookies';
+import validator from 'validator';
 
 import './SubmissionField.css';
 
@@ -8,8 +9,16 @@ class SubmissionField extends React.Component {
         super(props);
         this.state = {
             link:'',
-            buttonActive:true
+            buttonActive:true,
+            placeholderText:"Submission link",
+            isChangeModal:false
         }
+    }
+
+    toOpenModal = () => {
+        this.setState({
+            isChangeModal:true
+        })
     }
 
     setLink = (link) => {
@@ -19,41 +28,62 @@ class SubmissionField extends React.Component {
     }
 
     onSubmit = () => {
-        this.setState({
-            buttonActive:false
-        })
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/user/submitLink`,{
-            method: "post",
-            headers: {
-                'Content-type':'application/json',
-                'Authorization': "Bearer "+ cookie.load('PALETTE').uid
-            },
-            body: JSON.stringify({
-                link: this.state.link
+        if(validator.isURL(this.state.link)) {
+            // this.setState({
+            //     buttonActive:false
+            // })
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/user/submitLink`,{
+                method: "post",
+                headers: {
+                    'Content-type':'application/json',
+                    'Authorization': "Bearer "+ cookie.load('PALETTE').uid
+                },
+                body: JSON.stringify({
+                    link: this.state.link
+                })
             })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.payload.message)
-        })
-        .catch(err => {
-            console.log("Problem")
-        })
+            .then(response => response.json())
+            // .then(data => {
+            //     console.log(data.payload.message)
+            // })
+            .catch(err => {
+                console.log("Problem")
+            })
+        }
+        else {
+            // console.log("else")
+            this.setState({
+                placeholderText:"This is not a valid URL",
+                link:''
+            })
+        }
     }
 
     render() {
         return(
-            <div className="submission-div">
-                <input 
-                    className="submission-input" 
-                    placeholder="Enter the drive link containing images of your wireframes" 
-                    onChange={(link) => this.setLink(link)}
-                />
+            <div>
+                
                 {(this.state.buttonActive) 
                     ? 
-                    <button className="submission-button" onClick={()=>this.onSubmit()}>Submit</button> 
+                    <div className="submission-div">
+                        <input 
+                            className="submission-input" 
+                            placeholder={this.state.placeholderText}
+                            onChange={(link) => this.setLink(link)}
+                            value={this.state.link}
+                        />
+                        <button className="submission-button" style={{opacity:0.8}}><strong>Submit</strong></button> 
+                    </div>
                     : 
-                    <button className="submission-button" disabled>Submit</button>
+                    <div className="submission-div">
+                        <input 
+                            className="submission-input" 
+                            placeholder="Change link"
+                            onChange={(link) => this.setLink(link)}
+                            value={this.state.link}
+                        />
+                        <button className="submission-button" onClick={()=>this.onSubmit()}><strong>Change</strong></button>
+                    </div>
                 }
             </div>
         )
@@ -61,3 +91,5 @@ class SubmissionField extends React.Component {
 }
 
 export default SubmissionField;
+
+//added env

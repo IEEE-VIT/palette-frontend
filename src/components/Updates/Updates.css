@@ -1,32 +1,80 @@
+.main-updates-div {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .updates-div {
     background-color: white;
     border: 2px solid black;
     border-radius: 8px;
-    padding: 1em 1.5em;
+    padding: 0.4em 1.5em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.for-more-updates {
-    justify-self: center;
-    align-self: center;
-    margin: auto;
-}
-
-.updateIcons {
+    width: 47%;
     margin: 0 0.5em;
 }
 
+.sponsored-by-div {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 0.4em 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 47%;
+    margin: 0 0.5em;
+}
+
+.for-more-updates {
+    margin-top: 1em;
+    padding-right: 0.5em;
+}
+
+.updatesIcons {
+    margin: 0 0.5em;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+}
+
 @media (max-width: 575px) {
+    .main-updates-div {
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .updates-div {
         flex-direction: column;
+        width: 80%;
+        margin: 0 0;
+        padding: 0.5em 0;
+    }
+
+    .sponsored-by-div {
+        flex-direction: column;
+        width: 80%;
+        margin: 0.3em 0;
+        padding: 0.5em 0;
+        border: none;
+    }
+
+    .for-more-updates {
+        margin: 0.5em 0;
     }
 
     .updatesIcons {
         width: 100%;
-        margin-top: 0.7em;
+        /* margin-top: 0.7em; */
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;

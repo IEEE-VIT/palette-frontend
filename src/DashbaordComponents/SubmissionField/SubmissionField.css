@@ -26,8 +26,15 @@
     width: 20%;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    font-size: 1em;
 }
 
 .submission-button:focus {
     outline: none;
+}
+
+@media(max-width:400px) {
+    .submission-button {
+        font-size: 12px;
+    }
 }
