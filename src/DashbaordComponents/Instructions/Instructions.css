@@ -28,6 +28,14 @@
     color: black;
 }
 
+.click-to-join-button {
+    color: black;
+}
+
+.click-to-join-button:hover {
+    color: black;
+}
+
 .dld-logo {
     margin-bottom: 1em;
 }
