@@ -53,7 +53,7 @@ class ProblemStatement extends Component {
 
     componentWillMount() {
         this.onStart();
-        console.log(this.state)
+        // console.log(this.state)
     } 
 
     onStart = () => {
@@ -66,7 +66,7 @@ class ProblemStatement extends Component {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);  
+            // console.log(data);  
             this.setState({
                 count:data.payload.count,
                 submittedTask:data.payload.submittedTask
@@ -99,7 +99,7 @@ class ProblemStatement extends Component {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             this.setState({
                 count:data.payload.count
             })
@@ -131,7 +131,7 @@ class ProblemStatement extends Component {
                 isLoading:false
             });
         }).catch((err) => {
-            console.log(err);
+            // console.log(err);
             this.setState({
                 isLoading:false
             });
@@ -157,7 +157,7 @@ class ProblemStatement extends Component {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data.payload.message)
+            // console.log(data.payload.message)
             this.setState({
                 submittedTask:true,
                 isLock1:true,

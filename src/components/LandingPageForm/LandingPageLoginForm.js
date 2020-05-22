@@ -87,7 +87,7 @@ class LandingPageLoginForm extends Component {
                 cookie.save('PALETTE',{uid: user.uid, email: user.email},{path:'/'});
             })
             .then(() => {
-                console.log("in dashboard")
+                // console.log("in dashboard")
                 window.location.href = "/dashboard";
                 that.setState({loaded:true})
             })
@@ -95,7 +95,7 @@ class LandingPageLoginForm extends Component {
                 that.setState({loaded:true})
             });
           }).catch(function(error) {
-              console.log(error)
+            //   console.log(error)
             that.setState({loaded:true})
           });
     }
@@ -145,7 +145,7 @@ class LandingPageLoginForm extends Component {
             cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
         })
         .catch((err) => {
-            console.log(err);
+            // console.log(err);
             this.setState({
                 loading: false,
                 authStatus: 'Invalid email/password combination',

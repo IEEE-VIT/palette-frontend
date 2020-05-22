@@ -9,7 +9,7 @@ class SubmissionField extends React.Component {
         super(props);
         this.state = {
             link:'',
-            buttonActive:false,
+            buttonActive:true,
             placeholderText:"Submission link",
             isChangeModal:false
         }
@@ -29,9 +29,9 @@ class SubmissionField extends React.Component {
 
     onSubmit = () => {
         if(validator.isURL(this.state.link)) {
-            this.setState({
-                buttonActive:false
-            })
+            // this.setState({
+            //     buttonActive:false
+            // })
             fetch(`${process.env.REACT_APP_BACKEND_URL}/user/submitLink`,{
                 method: "post",
                 headers: {
@@ -43,15 +43,15 @@ class SubmissionField extends React.Component {
                 })
             })
             .then(response => response.json())
-            .then(data => {
-                console.log(data.payload.message)
-            })
+            // .then(data => {
+            //     console.log(data.payload.message)
+            // })
             .catch(err => {
                 console.log("Problem")
             })
         }
         else {
-            console.log("else")
+            // console.log("else")
             this.setState({
                 placeholderText:"This is not a valid URL",
                 link:''
@@ -72,7 +72,7 @@ class SubmissionField extends React.Component {
                             onChange={(link) => this.setLink(link)}
                             value={this.state.link}
                         />
-                        <button className="submission-button" onClick={()=>this.onSubmit()}><strong>Submit</strong></button> 
+                        <button className="submission-button" style={{opacity:0.8}}><strong>Submit</strong></button> 
                     </div>
                     : 
                     <div className="submission-div">

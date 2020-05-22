@@ -10,9 +10,9 @@ import './DashboardNavbar.css';
 class DashboardNavbar extends Component {
 
     signOut = () => {
-        console.log('sign out clicked')
+        // console.log('sign out clicked')
         firebase.auth().signOut().then(function() {
-            console.log('inside signout auth')
+            // console.log('inside signout auth')
             cookie.remove('PALETTE', { path: '/' })
             window.location.href = "/";
           })

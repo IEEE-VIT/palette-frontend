@@ -103,7 +103,6 @@ class Form extends Component {
                 cookie.save('PALETTE',{uid: user.uid, email: user.email},{path:'/'});
             })
             .then(() => {
-                console.log("in dashboard")
                 window.location.href = "/dashboard";
                 that.setState({loaded:true})
             })
@@ -111,7 +110,6 @@ class Form extends Component {
                 that.setState({loaded:true})
             });
           }).catch(function(error) {
-              console.log(error)
             that.setState({loaded:true})
           });
     }
@@ -183,7 +181,6 @@ class Form extends Component {
             }).then((data1)=>{
                 if (data1.statusCode !== 200) {
                     this.setState({loading:false})
-                    console.log(data1.payload.msg)
                 } else {
                     window.location.href="/dashboard"
                     cookie.save('PALETTE',{uid: data.user.uid, email: data.user.email},{path:'/'});
@@ -191,7 +188,6 @@ class Form extends Component {
             })
         })
         .catch(function(error) {
-            console.log(this.state.error)
             this.setState({TeacherError: "User already exists!"})
         });
     }
