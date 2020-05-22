@@ -10,7 +10,7 @@ class SubmissionField extends React.Component {
         this.state = {
             link:'',
             buttonActive:true,
-            placeholderText:"Submission link",
+            placeholderText:"This will be enabled once Round 1 calls are done to submit your final link for submission.",
             isChangeModal:false
         }
     }

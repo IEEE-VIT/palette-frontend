@@ -21,7 +21,7 @@ const Instructions = () => {
                     </ul>
                 </div>
             </div>
-            <img src={DLD} alt="dld" className="dld-logo" />
+            <a href="https://deeplearningdemystified.com/" target="__blank" rel="noopener noreferrer"><img src={DLD} alt="dld" className="dld-logo" /></a>
         </div>
     )
 }
