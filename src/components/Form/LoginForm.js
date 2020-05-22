@@ -62,41 +62,43 @@ class LoginForm extends Component {
         var that = this;
         firebase.auth().signInWithPopup(provider).then(function(result) {
             that.setState({loaded:false})
-            if (result.credential) {
-
-            }
             // The signed-in user info.
             var user = result.user;
-            fetch(`${process.env.REACT_APP_BACKEND_URL}/user/create`,{
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/user/login`,{
                 method: "post",
                 headers: {
                     'Content-type':'application/json',
                     'Authorization': "Bearer "+user.uid
                 },
-                body: JSON.stringify({
-                    name: user.displayName,
-                    email: user.email,
-                })
             })
-            .then(response => response.json())
             .then(data => {
-                //console.log(data)
-                // console.log('Saving Cookie...')
-                const expires = new Date()
-                expires.setDate(Date.now() + 1000 * 60 * 60 * 1)
-                cookie.save('PALETTE',{uid: user.uid, email: user.email},{path:'/'});
+                if(data.status === 200) {
+                    const expires = new Date()
+                    expires.setDate(Date.now() + 1000 * 60 * 60 * 1)
+                    cookie.save('PALETTE',{uid: user.uid, email: user.email},{path:'/'});
+                    console.log("in dashboard")
+                    window.location.href = "/dashboard";
+                    that.setState({loaded:true})
+                } else {
+                    // that.setState({loaded:true})
+                    that.setState({
+                        loading: false,
+                        authStatus: 'Invalid email/password combination',
+                    });
+                }
             })
-            .then(() => {
-                console.log("in dashboard")
-                window.location.href = "/dashboard";
-                that.setState({loaded:true})
-            })
+            // .then(response => response.json())
+            // .then(data => {
+            //     //console.log(data)
+            //     // console.log('Saving Cookie...')
+            // })
+            // .then(() => {
+            // })
             .catch(e => {
                 that.setState({loaded:true})
             });
           }).catch(function(error) {
               console.log(error)
-            that.setState({loaded:true})
           }.bind(this));
     }
 
