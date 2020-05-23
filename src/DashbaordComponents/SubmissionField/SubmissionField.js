@@ -49,6 +49,7 @@ class SubmissionField extends React.Component {
                     link:'',
                     buttonActive:false
                 })
+                alert("Link has been submitted.")
             })
             // .then(data => {
             //     console.log(data.payload.message)
