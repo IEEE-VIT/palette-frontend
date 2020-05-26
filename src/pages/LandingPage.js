@@ -3,10 +3,7 @@ import NavBarComponent from '../components/NavBar/NavBar';
 import PaletteTitle from '../components/PaletteTitle/PaletteTitle';
 import Title from '../components/Title/Title';
 import Fade from 'react-reveal/Fade';
-
 import solveProblems from '../assets/images/solveProblems.svg';
-
-import './LandingPage.css';
 import Contact from '../components/Contact/Contact';
 import ArtWorkSlider from '../components/ArtWorkSlider/ArtWorkSlider';
 import RegistrationText from '../components/RegistrationText/RegistrationText';
@@ -15,7 +12,6 @@ import LoadingGif from '../assets/gif/loading.gif';
 import AuthModal from '../components/AuthModal/AuthModal.js';
 import Timeline from '../assets/Timeline.pdf';
 import DeepLearningDemystified from '../assets/images/Deep-Learning-Demystified-Logo.svg';
-
 import backgroundVideo from '../assets/gif/desktop-bg.mp4';
 import mobileBackgroundVideo from '../assets/gif/mob-bg.mp4';
 import LandingPageLoginForm from '../components/LandingPageForm/LandingPageLoginForm';
@@ -23,12 +19,14 @@ import LandingPageForm from '../components/LandingPageForm/LandingPageForm';
 import windowSize from 'react-window-size';
 import Speakers from '../components/Speakers/Speakers';
 
+import './LandingPage.css';
+
 class LandingPage extends Component {
 
     constructor() {
         super();
         this.state = {
-            isLoading: true,
+            isLoading: false,
             isOpen: false,
             whichModal:'',
             mainPageLogInClick:false
@@ -199,20 +197,25 @@ class LandingPage extends Component {
                         <div className="section" id="register">
                             <div className="container">
                                 <Fade bottom>
-                                    <Title title={'Buckle up! Something big on your way!'} />
+                                    <Title title={'Congratulations to the winners!'} />
                                 </Fade>
                                 <Fade bottom>
                                     <RegistrationText />
-                                    <LandingPageLoginForm />
+                                    {(this.state.mainPageLogInClick) 
+                                    ?
+                                        <LandingPageLoginForm />
+                                        :
+                                        <LandingPageForm />
+                                    }
                                     <Fade bottom>
                                         <div className="register-or-login-button">
-                                            {/* {(this.state.mainPageLogInClick)
+                                            {(this.state.mainPageLogInClick)
                                             ?
                                                 <p> Don't have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClickReverse()}><strong>Sign Up</strong></button> </p>
                                                 :
                                                 <p>Have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClick()}>Log in</button></p>
                                                 
-                                            } */}
+                                            }
                                         </div>  
                                     </Fade>                                  
                                 </Fade>

@@ -31,17 +31,17 @@ class AuthModal extends React.Component {
                     this.props.whichModal === 'register'
                     ?
                     <div>
-                        {/* <Form />
+                        <Form />
                         <div className = 'modal_footer' onClick={() => {
                             this.props.forLoginModal()
-                        }}> Have an account? <strong>Log in</strong> </div> */}
+                        }}> Have an account? <strong>Log in</strong> </div>
                     </div>
                     :
                     <div>
                         <LoginForm />
-                        {/* <div className = 'modal_footer' onClick={() => {
+                        <div className = 'modal_footer' onClick={() => {
                             this.props.forRegisterModel()
-                        }}> Don't have an account? <strong>Sign Up</strong> </div> */}
+                        }}> Don't have an account? <strong>Sign Up</strong> </div>
                     </div>
                    }
                </div>

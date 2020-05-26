@@ -62,7 +62,7 @@ class ProblemStatement extends Component {
             method: "get",
             headers: {
                 'Content-type':'application/json',
-                'Authorization': "Bearer "+ cookie.load('PALETTE').uid
+                'Authorization': "Bearer "+"cookie"   //cookie.load('PALETTE').uid
             }
         })
         .then(response => response.json())
@@ -250,14 +250,14 @@ class ProblemStatement extends Component {
                     }
                     
 
-                    {(this.state.submittedTask)
+                    {/* {(this.state.submittedTask)
                     ?
                     <div></div>
                     :
                     <div>
                         Time's Up! Sorry, you cannot generate a problem statement anymore.
                     </div>
-                    }
+                    } */}
 
                     {(this.state.link1 === "")
                     ?
@@ -269,7 +269,7 @@ class ProblemStatement extends Component {
                         </div>
                     }
 
-                    {/* {(this.state.submittedTask)
+                    {(this.state.submittedTask)
                     ?
                         <div></div>
                     :
@@ -299,7 +299,7 @@ class ProblemStatement extends Component {
                                     <div className="generate-button"><span> <img src={Confirm} alt="new" /> Confirm this </span></div>
                                 </div>
                             </div>
-                        } */}
+                        }
                     </div>
                     
                 <ConfirmationModal isOpen={this.state.isOpen} task={this.state.task} forModal={this.forModal} onLockThisClick={this.onLockThisClick} />

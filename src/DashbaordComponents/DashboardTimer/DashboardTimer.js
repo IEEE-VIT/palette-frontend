@@ -12,7 +12,8 @@ const DashboardTimer = () => {
       }
     return(
         <div className="dashboard-timer">
-            Round 2 ends in <span className="dashboard-time-together"><strong><Countdown end={1590217200} wordsEndingOff={true} text={text} /></strong></span>
+            {/* Round 2 ends in <span className="dashboard-time-together"><strong><Countdown end={1590217200} wordsEndingOff={true} text={text} /></strong></span> */}
+            Round 1 ends in 1d 2h 3m 4s.
         </div>
     )
 }

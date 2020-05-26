@@ -11,9 +11,17 @@ const RegistrationText = () => {
     seconds: 's',
   }
     return(
+      <div>
         <p className="regText">
-            Registrations have closed.
+            1st Place: Nomit Pahuja
         </p>
+        <p className="regText">
+            2nd Place: M Abiraami
+        </p>
+        <p className="regText">
+            3rd Place: Kumar Rohit Chandra
+        </p>
+      </div>
     )
 }
 
