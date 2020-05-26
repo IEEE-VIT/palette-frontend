@@ -125,15 +125,9 @@ class ProblemStatement extends Component {
             }
 
             if(data.payload.newTo!=="Locked") {
-                if(this.state.count === 1) {
-                    this.setState({
-                        secondStatement: "Deep Learning Demystified"
-                    })
-                } else {
-                    this.setState({
-                        secondStatement: data.payload.newTo
-                    })
-                }
+                this.setState({
+                    secondStatement: data.payload.newTo
+                })
             }
             
             if(data.payload.newToHelp!=="Locked") {
