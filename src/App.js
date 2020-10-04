@@ -12,8 +12,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-		<BrowserRouter>
-			<Switch>
+	<BrowserRouter>
+				<Switch>
 				<Route path="/" component={LandingPage} exact={true}/>
 				<Route path="/dashboard" component={Dashboard} exact={true}/>
 			</Switch>
