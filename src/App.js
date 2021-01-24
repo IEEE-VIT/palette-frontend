@@ -13,11 +13,11 @@ function App() {
   return (
     <div className="App">
 	<BrowserRouter>
-				<Switch>
-				<Route path="/" component={LandingPage} exact={true}/>
-				<Route path="/dashboard" component={Dashboard} exact={true}/>
-			</Switch>
-		</BrowserRouter>
+		<Switch>
+			<Route path="/" component={LandingPage} exact={true}/>
+			<Route path="/dashboard" component={Dashboard} exact={true}/>
+		</Switch>
+	</BrowserRouter>
     </div>
   );
 }
