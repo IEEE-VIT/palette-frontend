@@ -13,12 +13,6 @@ const NavBarComponent = ({forLoginModal, forRegisterModel}) => {
                     <Nav.Link className="nav-button active" href="#info">Info</Nav.Link>
                     <Nav.Link className="nav-button" href="#history">History</Nav.Link>
                     <Nav.Link className="nav-button" href="#contact">Contact</Nav.Link>
-                    <Nav.Link className="nav-button" href="" onClick={() => {
-                        forLoginModal();
-                    }}>Log in</Nav.Link>
-                    <Nav.Link className="register-button" href="" onClick={() => {
-                        forRegisterModel();
-                    }}>Register</Nav.Link>
                 </Navbar.Collapse>
             </Navbar>
         </div>

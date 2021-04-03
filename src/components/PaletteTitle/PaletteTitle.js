@@ -3,9 +3,9 @@ import React from 'react';
 const PaletteTitle = () => {
     return(
         <div>
-            <h1><strong> Palette ‘20 </strong></h1>
+            <h1><strong> Palette ‘21 </strong></h1>
             <h3>
-              22 . 05 . 2020
+              Coming Soon
             </h3>
         </div>
     )

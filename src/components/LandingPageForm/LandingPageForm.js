@@ -208,38 +208,7 @@ class LandingPageLoginForm extends Component {
         } else {
             return(
                 <div className="LandingPageForm">
-                    <Button onClick={this.signIn} target="__blank" rel="noopener noreferrer" variant="outlined" className="Landing-googleButton" style={{marginBottom:15, borderWidth:2, borderColor:"black", borderRadius:5}}>
-                        <img src={googleIcon} alt="gicon" className="Landing-gicon" height="24" width="24"/>
-                        Continue with Google
-                    </Button> 
-                    <p>or</p>
                     <div className="Landing-input-fields">
-                        {(this.state.nameError)
-                            ? 
-                            <TextField
-                                error
-                                fullWidth={true}
-                                id="outlined-error-helper-text"
-                                label=""
-                                defaultValue={name}
-                                onChange={(name) => this.setName(name)}
-                                required
-                                helperText={this.state.nameErrorText}
-                                variant="outlined"
-                            />
-                            :
-                            <TextField
-                                id='outlined-error-helper-text'
-                                fullWidth={true}
-                                label="Name"
-                                variant="outlined"
-                                color="primary"
-                                value={name}
-                                onChange={(name) => this.setName(name)}
-                                type='name'
-                                helperText=""
-                            />
-                        }
                         {(this.state.emailError)
                             ?
                             <TextField
@@ -267,37 +236,9 @@ class LandingPageLoginForm extends Component {
                                 helperText=""
                             />
                         }
-                        {(this.state.passwordError)
-                            ?
-                            <TextField
-                                error
-                                fullWidth={true}
-                                id="outlined-error-helper-text"
-                                label=""
-                                defaultValue={password}
-                                onChange={(password) => this.setPassword(password)}
-                                required
-                                helperText={this.state.passwordErrorText}
-                                variant="outlined"
-                                type='password'
-                            />
-                            :
-                            <TextField
-                                id='outlined-basic'
-                                fullWidth={true}
-                                label="Password"
-                                variant="outlined"
-                                color="primary"
-                                InputLabelProps="textLight"
-                                value={password}
-                                onChange={(password) => this.setPassword(password)}
-                                type='password'
-                                helperText=""
-                            />
-                        }
                         
                     </div>
-                    <button  onClick={this.newRegistration} className="Landing-registerButton">Register</button>
+                    <button  onClick={this.newRegistration} className="Landing-registerButton">Submit</button>
                 </div>
             )
         }

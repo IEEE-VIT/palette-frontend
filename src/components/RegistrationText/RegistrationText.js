@@ -11,7 +11,7 @@ const RegistrationText = () => {
     seconds: 's',
   }
     return(
-      <div>
+      <div id="RegistrationText__div">
         <p className="regText">
             1st Place: Nomit Pahuja
         </p>

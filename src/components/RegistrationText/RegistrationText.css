@@ -1,9 +1,17 @@
 .regText {
     margin: 30px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
 .timer-together {
     white-space: nowrap;
+}
+
+#RegistrationText__div {
+    margin-bottom: 6em;
+}
+
+#RegistrationText__div .regText:nth-child(1) {
+    margin-top: 3em;
 }

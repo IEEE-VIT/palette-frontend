@@ -21,6 +21,20 @@ import Speakers from '../components/Speakers/Speakers';
 
 import './LandingPage.css';
 
+//since muted is not changed in dom in react - safari issues
+const VideoWorkaround = ({ src, id}) => (
+    <div dangerouslySetInnerHTML={{ __html: `
+      <video
+        muted
+        autoplay
+        playsinline
+        src="${src}"
+        id="${id}"
+      />
+    ` }}
+    />
+  );
+
 class LandingPage extends Component {
 
     constructor() {
@@ -94,30 +108,18 @@ class LandingPage extends Component {
                 {(this.props.windowWidth > 575)
                     ?
                     <div id="start">
-                        <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
-                            <source src={backgroundVideo} type="video/mp4" />
-                        </video>
+                        <VideoWorkaround src={backgroundVideo} id="videoBG" />
                         <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
                         <div className="paletteTitle">
                             <PaletteTitle />
-                            <div className="downArrow">
-                                <p>Powered by</p>
-                                <a href="https://deeplearningdemystified.com/" target="__blank" rel="noopener noreferrer"><img src={DeepLearningDemystified} alt="deeplearning"  /></a>
-                            </div>
                         </div>
                     </div>
                     :
                     <div id="start">
-                        <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="MobilevideoBG">
-                            <source src={mobileBackgroundVideo} type="video/mp4" />
-                        </video>
+                        <VideoWorkaround src={mobileBackgroundVideo} id="MobilevideoBG" />
                         <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
                         <div className="paletteTitle">
                             <PaletteTitle />
-                            <div className="downArrow">
-                                <p>Sponsored by</p>
-                                <img src={DeepLearningDemystified} alt="deeplearning"  />
-                            </div>
                         </div>
                     </div>
                 }
@@ -136,7 +138,7 @@ class LandingPage extends Component {
                                 <Title title={'Time to solve some real problems'} />
                                 <img src={solveProblems} alt='solveProblems' className="solveProblemImage" />
                                 <p className="content-para">
-                                    <strong>Palette ‘20</strong> is the 3rd edition of the prestigious design-a-thon conducted yearly by IEEE VIT. While the last two editions witnessed amazing graphic designs and web designs, this year it is a <strong>36 hour long design hack</strong> based entirely on the concepts of UI & UX. We strongly believe in the saying 
+                                    <strong>Palette ‘21</strong> is the 4th edition of the prestigious design-a-thon conducted yearly by IEEE VIT. While the last three editions witnessed amazing graphic designs and web designs, this year it is a <strong>48 hour long design hack</strong> based entirely on the concepts of UI & UX. We strongly believe in the saying 
                                     <strong> “Design is not how it looks, design is how it works”</strong>, we will be looking at not just the output or 
                                     presentation but the design process and steps involved like research, building user personas, a design 
                                     system, wireframing, branding and prototypying. Once the event goes live, the participants will be given 
@@ -146,78 +148,37 @@ class LandingPage extends Component {
                         </div>
                     </Fade>
 
-                    <div style={{marginTop:40}}>
-                        <Fade bottom>
-                            <a href={Timeline} className="timeline-button" target="_blank" rel="noopener noreferrer" > Show timeline </a>
-                        </Fade>
-                    </div>
-
                     <Fade bottom>
                         <div>
                             <Speakers />
                         </div>
                     </Fade>
-                    
-                    <div id="history">
-
-                    </div>
 
                     <Fade bottom>
                         {/* artworks from previous */}
                         <div className="section" id="history">
                             <div className="container-2">
-                                <Title title={'Highlights from Palette ‘19'} />
+                                <Title title={'Highlights from Previous Editions of Palette'} />
                                 <ArtWorkSlider />
-                            </div>
-                            <div className="container">
-                                
-                                {/* <ArtWorkCarousel /> */}
-                                <p className="content-para para-space">
-                                Palette ‘19 was an amazing event filled with exciting talks 
-                                by <a href="https://www.linkedin.com/in/saptarshipr/" className="linkedin-link"><strong>Saptarshi Prakash</strong></a> and <a href="https://www.linkedin.com/in/hckmstrrahul/" className="linkedin-link"><strong>Rahul Chakraborty</strong></a> who 
-                                are currently working at <strong>Swiggy</strong>. We had the 6-hour journey of students 
-                                competing to work on compelling designs to win the prize. With our exceptional problem statements, 
-                                the participants were in a high-pressure situation but with the guidance and mentorship from our
-                                speakers as well as our experienced seniors, the outcome was <strong>incredible.</strong> 
-                                </p>
                             </div>
                         </div>
                     </Fade>
 
                     <Fade bottom>
                         <div className="container">
-                            <p className="content-para">
-                                <strong>Collaborators</strong>
-                            </p>
+                            <Title title={'Past Collaborators'} />
                             <Collaborators />
                         </div>
                     </Fade>
 
-                    
+                
                         <div className="section" id="register">
                             <div className="container">
                                 <Fade bottom>
-                                    <Title title={'Congratulations to the winners!'} />
+                                    <Title title={'Winners of Palette \'20'} />
                                 </Fade>
                                 <Fade bottom>
                                     <RegistrationText />
-                                    {(this.state.mainPageLogInClick) 
-                                    ?
-                                        <LandingPageLoginForm />
-                                        :
-                                        <LandingPageForm />
-                                    }
-                                    <Fade bottom>
-                                        <div className="register-or-login-button">
-                                            {(this.state.mainPageLogInClick)
-                                            ?
-                                                <p> Don't have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClickReverse()}><strong>Sign Up</strong></button> </p>
-                                                :
-                                                <p>Have an account? <button className="log-in-button" onClick={()=>this.mainPageLogInOnClick()}>Log in</button></p>
-                                                
-                                            }
-                                        </div>  
-                                    </Fade>                                  
                                 </Fade>
                             </div>
                         </div>
