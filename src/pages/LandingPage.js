@@ -108,29 +108,28 @@ class LandingPage extends Component {
     return (
       <div>
         {/* start */}
-        {this.props.windowWidth > 575 ? (
-          <div id="start">
-            <VideoWorkaround src={backgroundVideo} id="videoBG" />
-            <NavBarComponent
-              forLoginModal={this.forLoginModal}
-              forRegisterModel={this.forRegisterModel}
-            />
-            <div className="paletteTitle">
-              <PaletteTitle />
-            </div>
-          </div>
-        ) : (
-          <div id="start">
-            <VideoWorkaround src={mobileBackgroundVideo} id="MobilevideoBG" />
-            <NavBarComponent
-              forLoginModal={this.forLoginModal}
-              forRegisterModel={this.forRegisterModel}
-            />
-            <div className="paletteTitle">
-              <PaletteTitle />
-            </div>
-          </div>
-        )}
+        {(this.props.windowWidth > 575)
+                    ?
+                    <div id="start">
+                        <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="videoBG">
+                            <source src={backgroundVideo} type="video/mp4" />
+                        </video>
+                        <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
+                        <div className="paletteTitle">
+                            <PaletteTitle />
+                        </div>
+                    </div>
+                    :
+                    <div id="start">
+                        <video playsinline="playsInline" autoplay="autoPlay" muted="muted" id="MobilevideoBG">
+                            <source src={mobileBackgroundVideo} type="video/mp4" />
+                        </video>
+                        <NavBarComponent forLoginModal={this.forLoginModal} forRegisterModel={this.forRegisterModel} />
+                        <div className="paletteTitle">
+                            <PaletteTitle />
+                        </div>
+                    </div>
+                }
 
         <div style={{ backgroundColor: "white" }} id="info">
           <div id="info"></div>
