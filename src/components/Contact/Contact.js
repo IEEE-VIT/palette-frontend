@@ -16,7 +16,7 @@ const Contact = () => {
     return(
         <div className="contact">
             <div className="contact-info">
-                <p><img src={phone} alt='phone' className="contact-icon" /> +91 9560434342 </p>
+                <p><img src={phone} alt='phone' className="contact-icon" /> +91 9977955466 </p>
                 <p><img src={globe} alt='globe' className="contact-icon" /> <a href="https://ieeevit.org/" className="link-website">www.ieeevit.org</a> </p>
                 <p><img src={mail} alt='mail' className="contact-icon" /> contact@ieeevit.org </p>
             </div>
